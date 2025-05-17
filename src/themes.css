@@ -1,0 +1,78 @@
+/* Dim Mode Styles */
+
+.text-dispute-color {
+  color: theme("colors.dispute-color");
+}
+
+.dark .text-dispute-color {
+  color: theme("colors.dispute-color-dark");
+}
+
+.dim .text-dispute-color {
+  color: theme("colors.dispute-color-dark");
+}
+
+/* Text color */
+.text-text-color {
+  color: theme("colors.text-color");
+}
+
+.dark .text-text-color {
+  color: theme("colors.text-color-dark");
+}
+
+.dim .text-text-color {
+  color: theme("colors.text-color-dim");
+}
+
+/* Card background color */
+.bg-card {
+  background-color: theme("colors.card");
+}
+
+.dark .bg-card {
+  background-color: theme("colors.card-dark");
+}
+
+.dim .bg-card {
+  background-color: theme("colors.card-dim");
+}
+
+/* Sub-card background color */
+.bg-sub-card {
+  background-color: theme("colors.sub-card");
+}
+
+.dark .bg-sub-card {
+  background-color: theme("colors.sub-card-dark");
+}
+
+.dim .bg-sub-card {
+  background-color: theme("colors.sub-card-dim");
+}
+
+/* Custom border color */
+.border-custom-border {
+  border-color: theme("colors.custom-border");
+}
+
+.dark .border-custom-border {
+  border-color: theme("colors.custom-border-dark");
+}
+
+.dim .border-custom-border {
+  border-color: theme("colors.custom-border-dim");
+}
+
+/* Pre-bg background color */
+.bg-pre-bg {
+  background-color: theme("colors.pre-bg");
+}
+
+.dark .bg-pre-bg {
+  background-color: theme("colors.pre-bg-dark");
+}
+
+.dim .bg-pre-bg {
+  background-color: theme("colors.pre-bg-dim");
+}

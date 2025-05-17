@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  color-scheme: light;
+}
+
+/* Light mode styles */
+.light {
+  color-scheme: light;
+}
+
+/* Dark mode styles */
+.dark {
+  color-scheme: dark;
+}
+
+/* Dim mode styles */
+.dim {
+  color-scheme: dim;
+}

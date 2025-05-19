@@ -43,5 +43,34 @@
   "한국어": "한국어",
   "Tiếng Việt": "Tiếng Việt",
   "Türkçe": "Türkçe",
-  "Arabic": "Arabic"
+  "Arabic": "Arabic",
+  
+  "presale": {
+    "create_presale": "Create Presale",
+    "Chain": "Chain",
+    "evm_chain": "EVM chain",
+    "solana": "Solana",
+    "eclipse": "Eclipse",
+    "ton": "The Open Network",
+    "sui": "Sui",
+    "connect_wallet_message": "You need to connect wallet first.",
+    "connect_wallet": "Connect Wallet"
+  },
+  "chains": {
+    "bnb": "BNB Chain",
+    "ethereum": "Ethereum",
+    "arbitrum": "Arbitrum",
+    "polygon": "Polygon",
+    "avax": "AVAX",
+    "cronos": "Cronos",
+    "alvey": "Alvey",
+    "bitrock": "Bitrock",
+    "core": "Core",
+    "dogechain": "Dogechain",
+    "pulsechain": "PulseChain",
+    "base": "Base",
+    "zetachain": "ZetaChain",
+    "unichain": "Unichain"
+  
+}
 }

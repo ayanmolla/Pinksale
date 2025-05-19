@@ -1,9 +1,10 @@
 import React from 'react';
+import CreatePresaleHero from '../../../components/Launchpads/CreatePresaleHero/CreatePresaleHero';
 
 const CreatePresale = () => {
   return (
     <div>
-      CreatePresale
+      <CreatePresaleHero/>
     </div>
   )
 }

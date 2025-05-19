@@ -43,5 +43,34 @@
   "한국어": "কোরিয়ান",
   "Tiếng Việt": "ভিয়েতনামিজ",
   "Türkçe": "তুর্কি",
-  "Arabic": "আরবি"
+  "Arabic": "আরবি",
+  
+  "presale": {
+    "create_presale": "প্রিসেল তৈরি করুন",
+    "Chain": "চেইন",
+    "evm_chain": "ইভিএম চেইন",
+    "solana": "সোলানা",
+    "eclipse": "ইক্লিপ্স",
+    "ton": "দ্য ওপেন নেটওয়ার্ক",
+    "sui": "সুই",
+    "connect_wallet_message": "আপনাকে প্রথমে ওয়ালেট সংযোগ করতে হবে।",
+    "connect_wallet": "ওয়ালেট সংযোগ করুন"
+  },
+  "chains": {
+    "BNB Chain": "বিএনবি চেইন",
+    "ethereum": "ইথেরিয়াম",
+    "arbitrum": "আরবিট্রাম",
+    "polygon": "পলিগন",
+    "avax": "এভ্যাক্স",
+    "cronos": "ক্রোনোস",
+    "alvey": "আলভি",
+    "bitrock": "বিটরক",
+    "core": "কোর",
+    "dogechain": "ডোজচেইন",
+    "pulsechain": "পালসচেইন",
+    "base": "বেস",
+    "zetachain": "জেটাচেইন",
+    "unichain": "ইউনিচেইন"
+  
+}
 }

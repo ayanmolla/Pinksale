@@ -1,41 +1,47 @@
-import { Moon, MoonStar, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import React, { useEffect, useRef, useState, useCallback } from "react";
+
+import { Moon, MoonStar, Sun } from "lucide-react"; 
+import { useTheme } from "next-themes"; 
+import React, { useEffect, useRef, useState, useCallback } from "react";  
 
 const ToggleTheme = () => {
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const dropdownRef = useRef(null);
-
+  
   // Use a fallback theme if the current theme is undefined
   const currentTheme = theme || "light"; // Default to light theme if theme is undefined
-
-  console.log("currentTheme", currentTheme);
   
-
+  console.log("currentTheme", currentTheme);
+    
   const handleClickOutside = useCallback((event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setOpen(false);
     }
   }, []);
-
+  
   useEffect(() => {
     // Attach the event listener to the document
     document.addEventListener("mousedown", handleClickOutside);
-
+    
     // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [handleClickOutside]);
-
+  
   const changeTheme = (newTheme) => {
-  const html = document.documentElement;
-  html.classList.remove("light", "dark", "dim"); // Remove all theme classes
-  setTheme(newTheme); // Let next-themes add the correct one
-};
-
-
+    if (currentTheme === newTheme) {
+      // If the same theme is clicked twice, just close the dropdown
+      setOpen(false);
+      return;
+    }
+    
+    const html = document.documentElement;
+    html.classList.remove("light", "dark", "dim"); // Remove all theme classes
+    setTheme(newTheme); // Let next-themes add the correct one
+    setOpen(false); // Close dropdown after selection
+  };
+    
   return (
     <div className="relative">
       <div className="w-10 h-10 rounded-lg border border-custom-border bg-sub-card">

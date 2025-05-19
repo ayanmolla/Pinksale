@@ -9,9 +9,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "text-color": "#0787d0",
-        "text-color-dark": "#73b5e4",
-        "text-color-dim": "#096DA3 ",
+        "text-color": "#f95192",
+        "text-color-dark": "#f95192",
+        "text-color-dim": "#f95192",
         "dispute-color": "#000000",
         "dispute-color-dark": "#ffffff",
         "dispute-color-dim": "#ffffff",

@@ -1,6 +1,6 @@
-
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useTheme } from "next-themes";
+import { useTranslation } from "react-i18next";
 import ToggleTheme from "./ToggleTheme";
 import { Search, Globe } from "lucide-react";
 import iconimg from '../../Assets/headerdexviewicon.svg';
@@ -8,17 +8,15 @@ import iconimg from '../../Assets/headerdexviewicon.svg';
 const Header = () => {
   const { theme } = useTheme();
   const [isLangOpen, setIsLangOpen] = useState(false);
-  const [language, setLanguage] = useState("en"); // Default language
   const langDropdownRef = useRef(null);
+  const { i18n, t } = useTranslation();
   
   // Use a fallback theme if the current theme is undefined
   const currentTheme = theme || "light";
   
   const handleLangChange = (lang) => {
-    setLanguage(lang);
+    i18n.changeLanguage(lang);
     setIsLangOpen(false);
-    // Here you would also update your i18n context/settings
-    // i18n.changeLanguage(lang);
   };
   
   const handleClickOutside = useCallback((event) => {
@@ -49,7 +47,7 @@ const Header = () => {
         <div className="relative flex items-center">
           <input
             type="text"
-            placeholder="Type token symbol, address to find your launchpad"
+            placeholder={t('search_placeholder')}
             className={`w-full py-2 pl-10 pr-4 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-pink-500 ${
               currentTheme === "light"
                 ? "bg-gray-100 text-gray-800 placeholder-gray-500"
@@ -87,22 +85,22 @@ const Header = () => {
               <button
                 onClick={() => handleLangChange("en")}
                 className={`flex gap-2 items-center text-sm w-full p-1.5 rounded-lg ${
-                  language === "en"
+                  i18n.language === "en"
                     ? "text-text-color"
                     : "hover:bg-gray-700 hover:text-white"
                 }`}
               >
-                <Globe className="w-4 h-4" /> English {language === "en" && "✓"}
+                <Globe className="w-4 h-4" /> English {i18n.language === "en" && "✓"}
               </button>
               <button
                 onClick={() => handleLangChange("bn")}
                 className={`flex gap-2 items-center text-sm w-full p-1.5 rounded-lg ${
-                  language === "bn"
+                  i18n.language === "bn"
                     ? "text-text-color"
                     : "hover:bg-gray-700 hover:text-white"
                 }`}
               >
-                <Globe className="w-4 h-4" /> বাংলা (Bengali) {language === "bn" && "✓"}
+                <Globe className="w-4 h-4" /> বাংলা (Bengali) {i18n.language === "bn" && "✓"}
               </button>
             </div>
           )}
@@ -122,7 +120,7 @@ const Header = () => {
         </a>
         
         <button className="h-9 bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-lg font-medium text-sm">
-          Connect Wallet
+          {t('connect_wallet')}
         </button>
       </div>
     </div>

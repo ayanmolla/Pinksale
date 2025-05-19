@@ -2,49 +2,32 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "next-themes";
 import {
-  HiOutlineChevronRight,HiFire,HiTemplate,HiPlus,HiLockClosed,HiCurrencyDollar,HiSupport,HiChartBar,HiCash,HiShieldCheck,
-  HiArrowsExpand,HiGlobe,HiBell,HiCheck,HiDocument,HiShoppingBag,HiPaperAirplane,HiX,HiThumbUp
+  HiOutlineChevronRight,
 } from "react-icons/hi";
 import { CheckCheck } from "lucide-react";
 import collapselogo from '../../Assets/Logoimg.svg';
 import mainlogo from '../../Assets/Logoimg.svg';
+import { useTranslation } from "react-i18next";
+import SidebarArray from "../../Array/SidebarArray";
 
 const Sidebar = () => {
   const [expanded, setExpanded] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const location = useLocation();
   const { theme } = useTheme();
+  const { t } = useTranslation();
   
   // Use a fallback theme if the current theme is undefined
   const currentTheme = theme || "light";
 
-  // Menu items structure
-  const menuItems = [
-    { id: "launchpads", label: "Launchpads", link: "/launchpads", icon: HiFire, hasChildren: true, children: [] },
-    { id: "pinkmeme", label: "PinkMeme", link: "/pinkmeme", icon: HiTemplate, hasChildren: true, children: [] },
-    { id: "teleairdrop", label: "Tele Airdrop Bot", link: "/teleairdrop", icon: HiPlus, hasChildren: true, children: [] },
-    { id: "pinklock", label: "PinkLock", link: "/pinklock", icon: HiLockClosed, hasChildren: true, children: [] },
-    { id: "airdrops", label: "Airdrops", link: "/airdrops", icon: HiPlus, hasChildren: true, children: [] },
-    { id: "token", label: "Token", link: "/token", icon: HiCurrencyDollar, hasChildren: true, children: [] },
-    { id: "support", label: "Support", link: "/support", icon: HiSupport, hasChildren: false, children: [] },
-    { id: "leaderboards", label: "Leaderboards", link: "/leaderboards", icon: HiChartBar, hasChildren: false, children: [] },
-    { id: "buy-crypto", label: "Buy Crypto Fiat", link: "/buy-crypto", icon: HiCash, hasChildren: false, children: [] },
-    { id: "anti-bot", label: "Anti-Bot", link: "/anti-bot", icon: HiShieldCheck, hasChildren: false, children: [] },
-    { id: "multi-sender", label: "Multi-Sender", link: "/multi-sender", icon: HiArrowsExpand, hasChildren: false, children: [] },
-    { id: "dexview", label: "dexview.com", link: "/dexview", icon: HiGlobe, hasChildren: false, children: [] },
-    { id: "pools-alert", label: "Pools alert", link: "/pools-alert", icon: HiBell, hasChildren: false, children: [] },
-    { id: "kyc", label: "KYC & Audit", link: "/kyc", icon: HiCheck, hasChildren: false, children: [] },
-    { id: "docs", label: "Docs", link: "/docs", icon: HiDocument, hasChildren: false, children: [] },
-    { id: "shop", label: "Shop", link: "/shop", icon: HiShoppingBag, hasChildren: false, children: [] },
-    { id: "telegram", label: "Telegram", link: "/telegram", icon: HiPaperAirplane, hasChildren: true, children: [] },
-    { id: "x", label: "X", link: "/x", icon: HiX, hasChildren: false, children: [] },
-    { id: "facebook", label: "Facebook", link: "/facebook", icon: HiThumbUp, hasChildren: false, children: [] },
-  ];
+  // Get menu items from the separate file and apply translations
+  // This is where we pass the translation function to SidebarArray
+  const menuItems = SidebarArray(t);
 
   // Check if route is active
   const isActive = (path) => location.pathname.includes(path);
 
-  // Handle submenu toggle
+  // Handle submenu toggle - only one dropdown can be open at a time
   const handleSubmenuClick = (id) => {
     setActiveSubmenu(activeSubmenu === id ? null : id);
   };
@@ -78,18 +61,20 @@ const Sidebar = () => {
       {/* Menu Items */}
       <div className="overflow-y-auto max-h-[calc(100vh-64px)] scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         {menuItems.map((item) => (
-          <div key={item.id}>
+          <div key={item.id} className="relative">
             <Link
               to={item.link}
-              className={`flex items-center px-4 py-3 relative ${
-                isActive(item.link)
-                  ? currentTheme === "light"
-                    ? "text-blue-600"
-                    : "text-blue-400"
-                  : currentTheme === "light"
-                    ? "text-gray-700 hover:bg-gray-100"
-                    : "text-gray-300 hover:bg-gray-800"
-              } transition-colors`}
+              className={`flex items-center px-4 py-3 relative transition-colors
+                ${
+                  isActive(item.link)
+                    ? currentTheme === "light"
+                      ? "text-blue-600 bg-blue-50"
+                      : "text-blue-400 bg-gray-800"
+                    : currentTheme === "light"
+                      ? "text-gray-700 hover:bg-gray-100 hover:text-pink-500"
+                      : "text-gray-300 hover:bg-gray-800 hover:text-pink-500"
+                }
+              `}
               onClick={(e) => {
                 if (item.hasChildren) {
                   e.preventDefault();
@@ -133,15 +118,15 @@ const Sidebar = () => {
                     className={`flex items-center py-2 text-sm ${
                       isActive(child.link)
                         ? currentTheme === "light"
-                          ? "text-blue-600 font-medium"
-                          : "text-blue-400 font-medium"
+                          ? "text-pink-600 font-medium"
+                          : "text-pink-400 font-medium"
                         : currentTheme === "light"
-                          ? "text-gray-700"
-                          : "text-gray-300"
+                          ? "text-gray-700 hover:text-pink-600"
+                          : "text-gray-300 hover:text-pink-400"
                     }`}
                   >
                     <span>{child.label}</span>
-                    {isActive(child.link) && <CheckCheck className="w-4 h-4 ml-auto text-green-500" />}
+                    {isActive(child.link) && <CheckCheck className="w-4 h-4 ml-auto text-pink-500" />}
                   </Link>
                 ))}
               </div>

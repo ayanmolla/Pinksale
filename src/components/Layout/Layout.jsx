@@ -1,70 +1,43 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
+import { useTheme } from "next-themes";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 
 const Layout = () => {
-  const [collapsed, setCollapsed] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-
-  // Toggle sidebar collapse
-  const toggleSidebar = () => {
-    setCollapsed(!collapsed);
-  };
-
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (!darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("darkMode", "true");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("darkMode", "false");
-    }
-  };
-
-  // Check dark mode preference on mount
-  useEffect(() => {
-    const savedDarkMode = localStorage.getItem("darkMode");
-    if (savedDarkMode === "true") {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else if (
-      savedDarkMode === null &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
+  const { theme } = useTheme();
+  
+  // Use a fallback theme if the current theme is undefined
+  const currentTheme = theme || "light";
 
   return (
     <div className="h-screen w-screen flex overflow-hidden">
-      {/* Sidebar */}
-      <div
-        className={`fixed left-0 top-0 h-full ${
-          collapsed ? "w-20" : "w-80"
-        } transition-all duration-300 z-30`}
-      >
-        <Sidebar collapsed={collapsed} />
-      </div>
+      {/* Sidebar - Hover to expand */}
+      <Sidebar />
 
       {/* Main Content Wrapper */}
       <div className={`flex flex-col transition-all duration-300 w-full`}>
         {/* Navbar */}
-        {/* <div
-          className={`fixed top-0 h-16 z-20 transition-all duration-300 ${
-            collapsed ? "left-20" : "left-80"
-          } right-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center px-4`}
-        > */}
-          <Header/>
-        {/* </div> */}
+        <div 
+          className={`fixed top-0 left-16 right-0 h-16 z-20 transition-all duration-300 ${
+            currentTheme === "light" 
+              ? "bg-white border-b border-gray-200" 
+              : currentTheme === "dark"
+                ? "bg-gray-900 border-b border-gray-700"
+                : "bg-gray-800 border-b border-gray-700" // For dim theme
+          }`}
+        >
+          <Header />
+        </div>
 
         {/* Main Content */}
         <main
-          className={`min-h-screen h-full overflow-y-auto bg-gray-50 dark:bg-gray-900 transition-all pt-16 pb-8 px-6 ${
-            collapsed ? "ml-20" : "ml-80"
+          className={`min-h-screen h-full overflow-y-auto transition-all my-16 pb-20 p-4 ml-16 ${
+            currentTheme === "light" 
+              ? "bg-gray-50" 
+              : currentTheme === "dark"
+                ? "bg-gray-900"
+                : "bg-gray-800" // For dim theme
           }`}
           style={{ height: "calc(100vh - 2.5rem)" }}
         >

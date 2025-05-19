@@ -1,302 +1,161 @@
-import { useState, useEffect } from "react";
-import { 
-  ChevronDown, 
-  ChevronRight, 
-  CheckCircle,
-} from "lucide-react";
-import mainLogo from '../../Assets/Logoimg.svg'
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useTheme } from "next-themes";
+import {
+  HiOutlineChevronRight,HiFire,HiTemplate,HiPlus,HiLockClosed,HiCurrencyDollar,HiSupport,HiChartBar,HiCash,HiShieldCheck,
+  HiArrowsExpand,HiGlobe,HiBell,HiCheck,HiDocument,HiShoppingBag,HiPaperAirplane,HiX,HiThumbUp
+} from "react-icons/hi";
+import { CheckCheck } from "lucide-react";
+import collapselogo from '../../Assets/Logoimg.svg';
+import mainlogo from '../../Assets/Logoimg.svg';
 
-const menuItems = [
-  {
-    id: "launchpads",
-    icon: () => <div className="text-pink-500">🚀</div>,
-    label: "Launchpads",
-    link: "#",
-    hasChildren: true,
-    children: [
-      { id: "create-launchpad", label: "Create Launchpad", link: "#" },
-      { id: "my-launchpads", label: "My Launchpads", link: "#" }
-    ]
-  },
-  {
-    id: "pinkmeme",
-    icon: () => <div className="text-pink-500">👾</div>,
-    label: "PinkMeme",
-    link: "#",
-    hasChildren: true,
-    children: [
-      { id: "create-meme", label: "Create Meme", link: "#" },
-      { id: "browse-memes", label: "Browse Memes", link: "#" }
-    ]
-  },
-  {
-    id: "teleairdrop",
-    icon: () => <div className="text-pink-500">☁️</div>,
-    label: "Tele Airdrop Bot",
-    link: "#",
-    hasChildren: true,
-    children: [
-      { id: "create-airdrop", label: "Create Airdrop", link: "#" },
-      { id: "my-airdrops", label: "My Airdrops", link: "#" }
-    ]
-  },
-  {
-    id: "pinklock",
-    icon: () => <div className="text-pink-500">🔒</div>,
-    label: "PinkLock",
-    link: "#",
-    hasChildren: true,
-    children: [
-      { id: "create-lock", label: "Create Lock", link: "#" },
-      { id: "my-locks", label: "My Locks", link: "#" }
-    ]
-  },
-  {
-    id: "airdrops",
-    icon: () => <div className="text-pink-500">🪂</div>,
-    label: "Airdrops",
-    link: "#",
-    hasChildren: true,
-    children: [
-      { id: "create-airdrop", label: "Create Airdrop", link: "#" },
-      { id: "claim-airdrop", label: "Claim Airdrop", link: "#" }
-    ]
-  },
-  {
-    id: "token",
-    icon: () => <div className="text-pink-500">➕</div>,
-    label: "Token",
-    link: "#",
-    hasChildren: true,
-    children: [
-      { id: "create-token", label: "Create Token", link: "#" },
-      { id: "manage-tokens", label: "Manage Tokens", link: "#" }
-    ]
-  },
-  {
-    id: "support",
-    icon: () => <div className="text-pink-500">📨</div>,
-    label: "Support",
-    link: "#",
-    hasChildren: true,
-    children: [
-      { id: "contact", label: "Contact Us", link: "#" },
-      { id: "faq", label: "FAQ", link: "#" }
-    ]
-  },
-  { id: "divider1", type: "divider" },
-  {
-    id: "leaderboards",
-    icon: () => <div className="text-gray-600">🛡️</div>,
-    label: "Leaderboards",
-    link: "#",
-    hasChildren: false,
-  },
-  {
-    id: "buycrypto",
-    icon: () => <div className="text-gray-600">💻</div>,
-    label: "Buy Crypto Fiat",
-    link: "#",
-    hasChildren: false,
-  },
-  {
-    id: "antibot",
-    icon: () => <div className="text-gray-600">🤖</div>,
-    label: "Anti-Bot",
-    link: "#",
-    hasChildren: false,
-  },
-  {
-    id: "multisender",
-    icon: () => <div className="text-gray-600">▶️</div>,
-    label: "Multi-Sender",
-    link: "#",
-    hasChildren: false,
-  },
-  { id: "divider2", type: "divider" },
-  {
-    id: "dexview",
-    icon: () => <div className="text-gray-600">📈</div>,
-    label: "dexview.com",
-    link: "#",
-    hasChildren: false,
-  },
-  {
-    id: "poolsalert",
-    icon: () => <div className="text-gray-600">🏠</div>,
-    label: "Pools alert",
-    link: "#",
-    hasChildren: false,
-  },
-  {
-    id: "kycaudit",
-    icon: () => <div className="text-gray-600">✅</div>,
-    label: "KYC & Audit",
-    link: "#",
-    hasChildren: false,
-  },
-  {
-    id: "docs",
-    icon: () => <div className="text-gray-600">📄</div>,
-    label: "Docs",
-    link: "#",
-    hasChildren: false,
-  },
-  {
-    id: "shop",
-    icon: () => <div className="text-gray-600">🛒</div>,
-    label: "Shop",
-    link: "#",
-    hasChildren: false,
-  },
-  { id: "divider3", type: "divider" },
-  {
-    id: "telegram",
-    icon: () => <div className="text-pink-500">📨</div>,
-    label: "Telegram",
-    link: "#",
-    hasChildren: true,
-    children: [
-      { id: "join-channel", label: "Join Channel", link: "#" },
-      { id: "support-chat", label: "Support Chat", link: "#" }
-    ]
-  },
-  {
-    id: "twitter",
-    icon: () => <div className="text-gray-600">✖️</div>,
-    label: "X",
-    link: "#",
-    hasChildren: false,
-  },
-  {
-    id: "facebook",
-    icon: () => <div className="text-gray-600">📘</div>,
-    label: "Facebook",
-    link: "#",
-    hasChildren: false,
-  },
-  { id: "divider4", type: "divider" },
-  {
-    id: "theme",
-    icon: () => <div className="text-pink-500">☯️</div>,
-    label: "Theme",
-    link: "#",
-    hasChildren: true,
-    children: [
-      { id: "light-theme", label: "Light", link: "#" },
-      { id: "dark-theme", label: "Dark", link: "#" }
-    ]
-  },
-];
+const Sidebar = () => {
+  const [expanded, setExpanded] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const location = useLocation();
+  const { theme } = useTheme();
+  
+  // Use a fallback theme if the current theme is undefined
+  const currentTheme = theme || "light";
 
-const Sidebar = ({ collapsed }) => {
-  const [expandedMenus, setExpandedMenus] = useState({});
-  const [activeItem, setActiveItem] = useState(null);
+  // Menu items structure
+  const menuItems = [
+    { id: "launchpads", label: "Launchpads", link: "/launchpads", icon: HiFire, hasChildren: true, children: [] },
+    { id: "pinkmeme", label: "PinkMeme", link: "/pinkmeme", icon: HiTemplate, hasChildren: true, children: [] },
+    { id: "teleairdrop", label: "Tele Airdrop Bot", link: "/teleairdrop", icon: HiPlus, hasChildren: true, children: [] },
+    { id: "pinklock", label: "PinkLock", link: "/pinklock", icon: HiLockClosed, hasChildren: true, children: [] },
+    { id: "airdrops", label: "Airdrops", link: "/airdrops", icon: HiPlus, hasChildren: true, children: [] },
+    { id: "token", label: "Token", link: "/token", icon: HiCurrencyDollar, hasChildren: true, children: [] },
+    { id: "support", label: "Support", link: "/support", icon: HiSupport, hasChildren: false, children: [] },
+    { id: "leaderboards", label: "Leaderboards", link: "/leaderboards", icon: HiChartBar, hasChildren: false, children: [] },
+    { id: "buy-crypto", label: "Buy Crypto Fiat", link: "/buy-crypto", icon: HiCash, hasChildren: false, children: [] },
+    { id: "anti-bot", label: "Anti-Bot", link: "/anti-bot", icon: HiShieldCheck, hasChildren: false, children: [] },
+    { id: "multi-sender", label: "Multi-Sender", link: "/multi-sender", icon: HiArrowsExpand, hasChildren: false, children: [] },
+    { id: "dexview", label: "dexview.com", link: "/dexview", icon: HiGlobe, hasChildren: false, children: [] },
+    { id: "pools-alert", label: "Pools alert", link: "/pools-alert", icon: HiBell, hasChildren: false, children: [] },
+    { id: "kyc", label: "KYC & Audit", link: "/kyc", icon: HiCheck, hasChildren: false, children: [] },
+    { id: "docs", label: "Docs", link: "/docs", icon: HiDocument, hasChildren: false, children: [] },
+    { id: "shop", label: "Shop", link: "/shop", icon: HiShoppingBag, hasChildren: false, children: [] },
+    { id: "telegram", label: "Telegram", link: "/telegram", icon: HiPaperAirplane, hasChildren: true, children: [] },
+    { id: "x", label: "X", link: "/x", icon: HiX, hasChildren: false, children: [] },
+    { id: "facebook", label: "Facebook", link: "/facebook", icon: HiThumbUp, hasChildren: false, children: [] },
+  ];
 
-  // Toggle submenu expansion
-  const toggleSubmenu = (menuId) => {
-    setExpandedMenus(prev => ({
-      ...prev,
-      [menuId]: !prev[menuId]
-    }));
+  // Check if route is active
+  const isActive = (path) => location.pathname.includes(path);
+
+  // Handle submenu toggle
+  const handleSubmenuClick = (id) => {
+    setActiveSubmenu(activeSubmenu === id ? null : id);
   };
 
   return (
     <aside
-      className={`h-full min-h-screen bg-white border-r border-gray-200 transition-all duration-300 ${
-        collapsed ? "w-20" : "w-80"
+      className={`fixed left-0 top-0 h-screen transition-all duration-300 z-50 ${
+        currentTheme === "light" 
+          ? "bg-white border-r border-gray-200" 
+          : currentTheme === "dark"
+            ? "bg-gray-900 border-r border-gray-700"
+            : "bg-gray-800 border-r border-gray-700" // For dim theme
       }`}
+      onMouseEnter={() => setExpanded(true)}
+      onMouseLeave={() => setExpanded(false)}
+      style={{ width: expanded ? "240px" : "64px" }}
     >
       {/* Logo Section */}
-      <div className={`p-4 flex ${collapsed ? "justify-center" : "justify-between"} items-center border-b border-gray-200`}>
-        {collapsed ? (
-          <img src={mainLogo} alt="Logo" className="h-8 w-8" />
+      <div className={`p-4 flex h-16 items-center justify-center ${
+        currentTheme === "light"
+          ? "border-b border-gray-200"
+          : "border-b border-gray-700"
+      }`}>
+        {expanded ? (
+          <img src={mainlogo} alt="DexView" className="h-8 w-auto object-contain" />
         ) : (
-          <>
-            <img src={mainLogo} alt="Logo" className="h-8" />
-          </>
+          <img src={collapselogo} alt="DexView" className="h-8 w-8 object-contain" />
         )}
       </div>
 
       {/* Menu Items */}
-      <nav className="py-2 overflow-y-auto h-[calc(100vh-4rem)]">
-        <ul className="space-y-1 px-2">
-          {menuItems.map((item) => {
-            if (item.type === "divider") {
-              return (
-                <li key={item.id} className="my-2">
-                  <hr className="border-gray-200" />
-                </li>
-              );
-            }
-
-            const isExpanded = expandedMenus[item.id];
-            const Icon = item.icon;
-
-            return (
-              <li key={item.id} className="relative">
-                <a
-                  href={item.link}
-                  className={`flex items-center px-3 py-2 text-sm rounded-lg transition-all duration-200 group
-                    ${activeItem === item.id ? "bg-gray-100" : "hover:bg-gray-100"}
-                    ${collapsed ? "justify-center" : "justify-between"}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (item.hasChildren) {
-                      toggleSubmenu(item.id);
-                    } else {
-                      setActiveItem(item.id === activeItem ? null : item.id);
-                    }
-                  }}
-                >
-                  <div className="flex items-center">
-                    <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-                      <Icon />
-                    </span>
-                    {!collapsed && (
-                      <span className={`ml-3 ${item.hasChildren && isExpanded ? "font-medium" : ""} text-gray-700`}>
-                        {item.label}
-                      </span>
-                    )}
-                  </div>
-                  
-                  {!collapsed && item.hasChildren && (
-                    isExpanded ? 
-                    <ChevronDown className="w-4 h-4 text-gray-500" /> :
-                    <ChevronRight className="w-4 h-4 text-gray-500" />
-                  )}
-                </a>
-
-                {/* Dropdown menu */}
-                {!collapsed && item.hasChildren && isExpanded && (
-                  <div className="pl-8 mt-1 space-y-1">
-                    {item.children.map((child) => (
-                      <a
-                        key={child.id}
-                        href={child.link}
-                        className="flex items-center px-2 py-1.5 text-sm text-gray-600 hover:text-pink-500 rounded-md hover:bg-gray-50"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setActiveItem(child.id);
-                        }}
-                      >
-                        <span 
-                          className={`${activeItem === child.id ? "text-pink-500 font-medium" : ""}`}
-                        >
-                          {child.label}
-                        </span>
-                        {activeItem === child.id && (
-                          <CheckCircle className="w-4 h-4 ml-2 text-pink-500" />
-                        )}
-                      </a>
-                    ))}
-                  </div>
+      <div className="overflow-y-auto max-h-[calc(100vh-64px)] scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        {menuItems.map((item) => (
+          <div key={item.id}>
+            <Link
+              to={item.link}
+              className={`flex items-center px-4 py-3 relative ${
+                isActive(item.link)
+                  ? currentTheme === "light"
+                    ? "text-blue-600"
+                    : "text-blue-400"
+                  : currentTheme === "light"
+                    ? "text-gray-700 hover:bg-gray-100"
+                    : "text-gray-300 hover:bg-gray-800"
+              } transition-colors`}
+              onClick={(e) => {
+                if (item.hasChildren) {
+                  e.preventDefault();
+                  if (expanded) {
+                    handleSubmenuClick(item.id);
+                  }
+                }
+              }}
+            >
+              <div className="flex items-center">
+                <div className="min-w-[24px] flex items-center justify-center">
+                  {item.icon && <item.icon className="w-5 h-5" />}
+                </div>
+                {expanded && (
+                  <span className="ml-3 whitespace-nowrap">
+                    {item.label}
+                  </span>
                 )}
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+              </div>
+
+              {expanded && item.hasChildren && (
+                <HiOutlineChevronRight 
+                  className={`w-4 h-4 ml-auto transform transition-transform ${
+                    activeSubmenu === item.id ? "rotate-90" : ""
+                  }`}
+                />
+              )}
+            </Link>
+
+            {/* Submenu */}
+            {expanded && item.hasChildren && activeSubmenu === item.id && (
+              <div className={`pl-10 pr-4 py-2 ${
+                currentTheme === "light"
+                  ? "bg-gray-50"
+                  : "bg-gray-800"
+              }`}>
+                {item.children?.map((child) => (
+                  <Link
+                    key={child.id}
+                    to={child.link}
+                    className={`flex items-center py-2 text-sm ${
+                      isActive(child.link)
+                        ? currentTheme === "light"
+                          ? "text-blue-600 font-medium"
+                          : "text-blue-400 font-medium"
+                        : currentTheme === "light"
+                          ? "text-gray-700"
+                          : "text-gray-300"
+                    }`}
+                  >
+                    <span>{child.label}</span>
+                    {isActive(child.link) && <CheckCheck className="w-4 h-4 ml-auto text-green-500" />}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Add global style to hide scrollbar */}
+      <style jsx global>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </aside>
   );
 };

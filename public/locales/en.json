@@ -88,5 +88,12 @@
     "zetachain": "ZetaChain",
     "unichain": "Unichain"
   
-}
+},
+
+  "createSocial": {
+    "title": "Create Social Presale On Solana",
+    "connectWallet": "You need to connect Solana wallet first.",
+    "connectButton": "Connect Wallet"
+  }
+
 }

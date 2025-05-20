@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useTheme } from "next-themes";
 import { useTranslation } from "react-i18next";
-import { CheckCircle } from "lucide-react";
 import CreatePresaleImg1 from '../../../Assets/CreatePresaleImg1.svg';
 import CreatePresaleImg2 from '../../../Assets/CreatePresaleImg2.svg';
 import CreatePresaleImg3 from '../../../Assets/CreatePresaleImg3.svg';
@@ -18,8 +17,6 @@ import CreatePresaleImg13 from '../../../Assets/CreatePresaleImg13.png';
 import CreatePresaleImg14 from '../../../Assets/CreatePresaleImg14.svg';
 import SolanaImg from '../../../Assets/CreatePresaleImg15.png';
 import EclipseImg from '../../../Assets/CreatePresaleImg16.png';
-import TonImg from '../../../Assets/CreatePresaleImg17.svg';
-import SuiImg from '../../../Assets/CreatePresaleImg18.svg';
 
 const CreateSubscriptionHero = () => {
   const { theme } = useTheme();
@@ -68,22 +65,6 @@ const CreateSubscriptionHero = () => {
         { id: "eclipse-mainnet", label: t("Eclipse Mainnet"), icon: EclipseImg }
       ]
     },
-    {
-      id: "ton",
-      label: t("The Open Network"),
-      info: "(TON)",
-      chains: [
-        { id: "ton-mainnet", label: t("TON Mainnet"), icon: TonImg }
-      ]
-    },
-    {
-      id: "sui",
-      label: t("Sui"),
-      info: "",
-      chains: [
-        { id: "sui-mainnet", label: t("Sui Mainnet"), icon: SuiImg }
-      ]
-    }
   ];
 
   // Style based on theme

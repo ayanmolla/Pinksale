@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "next-themes";
@@ -17,7 +18,7 @@ const Sidebar = () => {
   const { t } = useTranslation();
   const currentTheme = theme || "light";
   const menuItems = SidebarArray(t);
-  const isActive = (path) => location.pathname.includes(path);
+  const isActive = (path) => location.pathname === path || location.pathname.startsWith(path + '/');
   const handleSubmenuClick = (id) => {
     setActiveSubmenu(activeSubmenu === id ? null : id);
   };
@@ -78,8 +79,8 @@ const Sidebar = () => {
                   ${
                     isActive(item.link)
                       ? currentTheme === "light"
-                        ? "text-blue-600 bg-blue-50"
-                        : "text-blue-400 bg-gray-800"
+                        ? "text-pink-600 bg-pink-50"
+                        : "text-pink-400 bg-gray-800"
                       : currentTheme === "light"
                         ? "text-gray-700 hover:bg-gray-100 hover:text-pink-500"
                         : "text-gray-300 hover:bg-gray-800 hover:text-pink-500"

@@ -18,12 +18,12 @@ const SidebarArray = (t) => [
     icon: IoRocketOutline, 
     hasChildren: true, 
     children: [
-      { id: "create-presale", label: t("Create Presale"), link: "/Launchpads/CreatePresale" },
-      { id: "create-fairlaunch", label: t("Create Fairlaunch"), link: "/Launchpads/CreateFairlaunch" },
-      { id: "create-subscription", label: t("Create Subscription"), link: "/Launchpads/CreateSubscription" },
-      { id: "create-social-sale", label: t("Create Social Sale"), link: "/Launchpads/CreateSocialSale" },
-      { id: "overflow-presale", label: t("Overflow Presale"), link: "/Launchpads/XOverFlowPresale" },
-      { id: "overflow-fairlaunch", label: t("Overflow Fairlaunch"), link: "/Launchpads/XOverflowFairlaunch" },
+      { id: "create-presale", label: t("Create Presale"), link: "/launchpads/CreatePresale" },
+      { id: "create-fairlaunch", label: t("Create Fairlaunch"), link: "/launchpads/CreateFairlaunch" },
+      { id: "create-subscription", label: t("Create Subscription"), link: "/launchpads/CreateSubscription" },
+      { id: "create-social-sale", label: t("Create Social Sale"), link: "/launchpads/CreateSocialSale" },
+      { id: "overflow-presale", label: t("Overflow Presale"), link: "/launchpads/XOverFlowPresale" },
+      { id: "overflow-fairlaunch", label: t("Overflow Fairlaunch"), link: "/launchpads/XOverflowFairlaunch" },
       { id: "launchpad-list", label: t("Launchpad List"), link: "/launchpads/list" }
     ]
   },

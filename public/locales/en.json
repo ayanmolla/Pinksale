@@ -53,6 +53,7 @@
     "createButton": "Create now",
     "learnButton": "Learn more",
     "exploreButton": "Explore Pink Ecosystem",
+    "statsTitle": "How big are we?",
     "stats": {
       "liquidityRaised": "Total Liquidity Raised",
       "totalProjects": "Total Projects",

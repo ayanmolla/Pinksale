@@ -11,6 +11,7 @@ import XOverFlowPresale from "./Pages/Launchpads/XOverFlowPresale/XOverFlowPresa
 import XOverflowFairlaunch from "./Pages/Launchpads/𝕏OverflowFairlaunch/𝕏OverflowFairlaunch";
 import PinkLockTokenMain from "./Pages/PinkLock/PinkLockToken";
 import PinkLockCreateMain from "./Pages/PinkLock/PinkLockCreate";
+import CreateAirdrop from "./Pages/Airdrops/CreateAirdrop";
 
 function App() {
   return (
@@ -22,19 +23,24 @@ function App() {
           <Route path="/Dashboard" element={<Dashboard />} />
 
           {/* Launchpads Pages */}
-          <Route path="/Launchpads/CreatePresale" element={<CreatePresale />} />
-          <Route path="/Launchpads/CreateFairlaunch" element={<CreateFairlaunch />} />
-          <Route path="/Launchpads/CreateSubscription" element={<CreateSubscription />} />
-          <Route path="/Launchpads/CreateSocialSale" element={<CreateSocialSale />} />
-          <Route path="/Launchpads/XOverFlowPresale" element={<XOverFlowPresale />} />
-          <Route path="/Launchpads/XOverflowFairlaunch" element={<XOverflowFairlaunch />} />
+          <Route path="/launchpads/CreatePresale" element={<CreatePresale />} />
+          <Route path="/launchpads/CreateFairlaunch" element={<CreateFairlaunch />} />
+          <Route path="/launchpads/CreateSubscription" element={<CreateSubscription />} />
+          <Route path="/launchpads/CreateSocialSale" element={<CreateSocialSale />} />
+          <Route path="/launchpads/XOverFlowPresale" element={<XOverFlowPresale />} />
+          <Route path="/launchpads/XOverflowFairlaunch" element={<XOverflowFairlaunch />} />
 
+          {/* Tale Airdrop */}
+          {/* <Route path="/teleAirdrop/CreateTeleAirdrop" element={<CreateTeleAirdrop />} /> */}
+          {/* <Route path="/teleAirdrop/AirdropBotList" element={<AirdropBotList />} /> */}
 
-          {/* PinkMeme Pages */}
-          {/* <Route path="/PinkMeme/CreateToken" element={<CreateToken />} /> */}
-          {/* <Route path="/PinkMeme/CreateList" element={<CreateList />} /> */}
+          {/* Pink Lock */}
           <Route path="/pinklock/create" element={<PinkLockCreateMain />} />
           <Route path="/pinklock/token" element={<PinkLockTokenMain />} />
+
+          {/* Airdrops Pages */}
+          <Route path="/Airdrops/CreateAirdrop" element={<CreateAirdrop />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

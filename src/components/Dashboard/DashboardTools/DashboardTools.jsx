@@ -1,65 +1,59 @@
 import { useState } from "react";
 import { useTheme } from "next-themes";
-import abc from '../../../Assets/abc.svg'
+import boxicon from '../../../Assets/DashboardTools.svg';
 
 const DashboardTools = () => {
   const { theme } = useTheme();
   const currentTheme = theme || "light";
-  
-  // In a real project, you would import these images or use a path to your assets
-  // This is a placeholder approach that creates a simple SVG for demonstration
-  const getTokenImage = () => {
-    return "/api/placeholder/64/64";
-  };
   
   const tools = [
     {
       id: 1,
       title: "Standard",
       description: "Mint standard tokens on ETH, BSC, AVAX, Fantom, Polygon.",
-      image: abc
+      image: boxicon
     },
     {
       id: 2,
       title: "Deflationary",
       description: "Generate deflationary tokens with tax and/or charity functions.",
-      image: abc
+      image: boxicon
     },
     {
       id: 3,
       title: "Customization",
       description: "Create a token sale for your own custom token easily.",
-      image: abc
+      image: boxicon
     },
     {
       id: 4,
       title: "Launchpad",
       description: "Use the token you mint to create a launchpad with just a few clicks",
-      image: abc
+      image: boxicon
     },
     {
       id: 5,
       title: "Branding",
       description: "Adding logo, social links, description, listing on PinkSale.",
-      image: abc
+      image: boxicon
     },
     {
       id: 6,
       title: "Management",
       description: "The portal to help you easily update content for your launchpad.",
-      image: abc
+      image: boxicon
     },
     {
       id: 7,
       title: "Community",
       description: "Promote your launchpad to millions of buyers on PinkSale.",
-      image: abc
+      image: boxicon
     },
     {
       id: 8,
       title: "Locking",
       description: "Lock your liquidity to PinkSwap, PancakeSwap after presale.",
-      image: abc
+      image: boxicon
     }
   ];
 

@@ -44,6 +44,22 @@
   "Tiếng Việt": "Tiếng Việt",
   "Türkçe": "Türkçe",
   "Arabic": "Arabic",
+
+  "dashboardHero": {
+    "announcement": "New PINKSALE token features coming ✨",
+    "title": "The Launchpad Protocol for Everyone",
+    "description": "PinkSale helps everyone to create their own tokens and token sales in few seconds.",
+    "subDescription": "Tokens created on PinkSale will be verified and published on explorer websites.",
+    "createButton": "Create now",
+    "learnButton": "Learn more",
+    "exploreButton": "Explore Pink Ecosystem",
+    "stats": {
+      "liquidityRaised": "Total Liquidity Raised",
+      "totalProjects": "Total Projects",
+      "participants": "Total Participants",
+      "valueLocked": "Total Values Locked"
+    }
+  },
   
   "presale": {
     "create_presale": "Create Presale",

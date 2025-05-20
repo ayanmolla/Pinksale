@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "next-themes";
 
-const SupportedChains = () => {
+const DashboardTable = () => {
   const { theme } = useTheme();
   
   // Use a fallback theme if the current theme is undefined
@@ -142,66 +142,66 @@ const SupportedChains = () => {
   const themeClasses = getThemeClasses();
 
   return (
-    <div className={`w-full py-6 px-4 md:px-6 ${themeClasses.container} SupportedChains`}>
+    <div className={`w-full py-6 px-4 md:px-6 ${themeClasses.container} DashboardTable`}>
       <div className={`max-w-7xl mx-auto`}>
-        <h1 className={`text-2xl font-bold mb-2 ${themeClasses.title} SupportedChains`}>
+        <h1 className={`text-2xl font-bold mb-2 ${themeClasses.title} DashboardTable`}>
           Supported Chains
         </h1>
-        <p className={`mb-6 ${themeClasses.subtitle} SupportedChains`}>
+        <p className={`mb-6 ${themeClasses.subtitle} DashboardTable`}>
           View statistics for all supported blockchain networks
         </p>
         
-        <div className={`overflow-x-auto rounded-xl border ${themeClasses.card} SupportedChains`}>
-          <table className="min-w-full divide-y divide-gray-200 SupportedChains">
+        <div className={`overflow-x-auto rounded-xl border ${themeClasses.card} DashboardTable`}>
+          <table className="min-w-full divide-y divide-gray-200 DashboardTable">
             <thead>
-              <tr className={`${themeClasses.headerRow} SupportedChains`}>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider SupportedChains">
+              <tr className={`${themeClasses.headerRow} DashboardTable`}>
+                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider DashboardTable">
                   Chain
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider SupportedChains">
+                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider DashboardTable">
                   Projects
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider SupportedChains">
+                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider DashboardTable">
                   Participants
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider SupportedChains">
+                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider DashboardTable">
                   Liquidity raised
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider SupportedChains">
+                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider DashboardTable">
                   Values Locked
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200 SupportedChains">
+            <tbody className="divide-y divide-gray-200 DashboardTable">
               {chainData.map((chain, index) => (
                 <tr 
                   key={`${chain.id}-${index}`} 
-                  className={`${themeClasses.tableRow} SupportedChains`}
+                  className={`${themeClasses.tableRow} DashboardTable`}
                 >
-                  <td className="px-6 py-4 whitespace-nowrap SupportedChains">
-                    <div className="flex items-center gap-3 SupportedChains">
-                      <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center SupportedChains">
+                  <td className="px-6 py-4 whitespace-nowrap DashboardTable">
+                    <div className="flex items-center gap-3 DashboardTable">
+                      <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center DashboardTable">
                         <img 
                           src={chain.logo} 
                           alt={`logo`} 
-                          className="h-6 w-6 object-contain SupportedChains"
+                          className="h-6 w-6 object-contain DashboardTable"
                         />
                       </div>
-                      <span className={`font-medium ${themeClasses.text} SupportedChains`}>
+                      <span className={`font-medium ${themeClasses.text} DashboardTable`}>
                         {chain.name}
                       </span>
                     </div>
                   </td>
-                  <td className={`px-6 py-4 whitespace-nowrap ${themeClasses.text} SupportedChains`}>
+                  <td className={`px-6 py-4 whitespace-nowrap ${themeClasses.text} DashboardTable`}>
                     {chain.projects}
                   </td>
-                  <td className={`px-6 py-4 whitespace-nowrap ${themeClasses.text} SupportedChains`}>
+                  <td className={`px-6 py-4 whitespace-nowrap ${themeClasses.text} DashboardTable`}>
                     {chain.participants}
                   </td>
-                  <td className={`px-6 py-4 whitespace-nowrap ${themeClasses.text} SupportedChains`}>
+                  <td className={`px-6 py-4 whitespace-nowrap ${themeClasses.text} DashboardTable`}>
                     {chain.liquidityRaised}
                   </td>
-                  <td className={`px-6 py-4 whitespace-nowrap ${themeClasses.text} SupportedChains`}>
+                  <td className={`px-6 py-4 whitespace-nowrap ${themeClasses.text} DashboardTable`}>
                     {chain.valuesLocked}
                   </td>
                 </tr>
@@ -214,4 +214,4 @@ const SupportedChains = () => {
   );
 };
 
-export default SupportedChains;
+export default DashboardTable;

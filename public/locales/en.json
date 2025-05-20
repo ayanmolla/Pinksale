@@ -163,5 +163,13 @@
     "darkMode": "Dark mode",
     "language": "LANGUAGE",
     "allRightsReserved": "All rights reserved."
+  },
+  
+  "createAirdrop": {
+    "title": "Create Airdrop",
+    "tokenAddress": "Token Address",
+    "tokenAddressPlaceholder": "Ex: PinkMoon",
+    "next": "Next"
   }
+
 }

@@ -68,7 +68,7 @@ const SidebarArray = (t) => [
     icon: PiParachute, 
     hasChildren: true, 
     children: [
-      { id: "create-airdrop", label: t("Create Airdrop"), link: "/airdrops/create" },
+      { id: "create-airdrop", label: t("Create Airdrop"), link: "/Airdrops/CreateAirdrop" },
       { id: "airdrop-list", label: t("Airdrop List"), link: "/airdrops/list" }
     ]
   },

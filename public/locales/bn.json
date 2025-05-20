@@ -164,6 +164,14 @@
     "darkMode": "ডার্ক মোড",
     "language": "ভাষা",
     "allRightsReserved": "সর্বস্বত্ব সংরক্ষিত।"
-  }
+  },
+  
+  "createAirdrop": {
+    "title": "এয়ারড্রপ তৈরি করুন",
+    "tokenAddress": "টোকেন ঠিকানা",
+    "tokenAddressPlaceholder": "উদাঃ পিংকমুন",
+    "next": "পরবর্তী"
+  
+}
 
 }

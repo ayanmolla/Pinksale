@@ -36,7 +36,7 @@ const Header = () => {
   }, [handleClickOutside]);
 
   return (
-    <div className={`flex justify-between items-center gap-5 px-6 py-3 border-b ${
+    <div className={`flex justify-between items-center gap-5 px-6 h-16 border-b ${
       currentTheme === "light"
         ? "border-gray-200 bg-white"
         : currentTheme === "dark"

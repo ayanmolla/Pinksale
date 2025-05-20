@@ -6,13 +6,11 @@ import Header from "./Header";
 
 const Layout = () => {
   const { theme } = useTheme();
-  
-  // Use a fallback theme if the current theme is undefined
   const currentTheme = theme || "light";
 
   return (
     <div className="h-screen w-screen flex overflow-hidden">
-      {/* Sidebar - Hover to expand */}
+      {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content Wrapper */}

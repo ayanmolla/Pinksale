@@ -1,70 +1,66 @@
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import { useTranslation } from "react-i18next";
 import boxicon from '../../../Assets/DashboardTools.svg';
 
 const DashboardTools = () => {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const currentTheme = theme || "light";
   
   const tools = [
     {
       id: 1,
-      title: "Standard",
-      description: "Mint standard tokens on ETH, BSC, AVAX, Fantom, Polygon.",
+      title: t('dashboardTools.tools.standard.title'),
+      description: t('dashboardTools.tools.standard.description'),
       image: boxicon
     },
     {
       id: 2,
-      title: "Deflationary",
-      description: "Generate deflationary tokens with tax and/or charity functions.",
+      title: t('dashboardTools.tools.deflationary.title'),
+      description: t('dashboardTools.tools.deflationary.description'),
       image: boxicon
     },
     {
       id: 3,
-      title: "Customization",
-      description: "Create a token sale for your own custom token easily.",
+      title: t('dashboardTools.tools.customization.title'),
+      description: t('dashboardTools.tools.customization.description'),
       image: boxicon
     },
     {
       id: 4,
-      title: "Launchpad",
-      description: "Use the token you mint to create a launchpad with just a few clicks",
+      title: t('dashboardTools.tools.launchpad.title'),
+      description: t('dashboardTools.tools.launchpad.description'),
       image: boxicon
     },
     {
       id: 5,
-      title: "Branding",
-      description: "Adding logo, social links, description, listing on PinkSale.",
+      title: t('dashboardTools.tools.branding.title'),
+      description: t('dashboardTools.tools.branding.description'),
       image: boxicon
     },
     {
       id: 6,
-      title: "Management",
-      description: "The portal to help you easily update content for your launchpad.",
+      title: t('dashboardTools.tools.management.title'),
+      description: t('dashboardTools.tools.management.description'),
       image: boxicon
     },
     {
       id: 7,
-      title: "Community",
-      description: "Promote your launchpad to millions of buyers on PinkSale.",
+      title: t('dashboardTools.tools.community.title'),
+      description: t('dashboardTools.tools.community.description'),
       image: boxicon
     },
     {
       id: 8,
-      title: "Locking",
-      description: "Lock your liquidity to PinkSwap, PancakeSwap after presale.",
+      title: t('dashboardTools.tools.locking.title'),
+      description: t('dashboardTools.tools.locking.description'),
       image: boxicon
     }
   ];
 
   return (
-    <div className={`Dashboard__Tools py-8 px-4 ${
-      currentTheme === "light" 
-        ? "bg-white" 
-        : currentTheme === "dark" 
-          ? "bg-gray-900" 
-          : "bg-gray-800"
-    }`}>
+    <div className={`Dashboard__Tools py-8 px-4 `}>
       <div className="Dashboard__Tools-container max-w-7xl mx-auto">
         <div className="Dashboard__Tools-header text-center mb-10">
           <h2 className={`Dashboard__Tools-title text-3xl font-bold mb-4 ${
@@ -72,15 +68,14 @@ const DashboardTools = () => {
               ? "text-gray-900" 
               : "text-gray-100"
           }`}>
-            A Suite of Tools for Token Sales
+            {t('dashboardTools.title')}
           </h2>
           <p className={`Dashboard__Tools-subtitle max-w-3xl mx-auto ${
             currentTheme === "light" 
               ? "text-gray-600" 
               : "text-gray-300"
           }`}>
-            A suite of tools were built to help you create your own tokens and launchpads in a fast, 
-            simple and cheap way, with no prior code knowledge required and 100% decentralized!
+            {t('dashboardTools.subtitle')}
           </p>
         </div>
         

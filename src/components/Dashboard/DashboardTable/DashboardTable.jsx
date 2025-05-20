@@ -1,17 +1,27 @@
 import React from "react";
 import { useTheme } from "next-themes";
+import { useTranslation } from "react-i18next";
+import tableicon1 from '../../../Assets/DashboardTableicon1.svg';
+import tableicon2 from '../../../Assets/DashboardTableicon2.svg';
+import tableicon3 from '../../../Assets/DashboardTableicon3.png';
+import tableicon4 from '../../../Assets/DashboardTableicon4.png';
+import tableicon5 from '../../../Assets/DashboardTableicon5.svg';
+import tableicon6 from '../../../Assets/DashboardTableicon6.png';
+import tableicon7 from '../../../Assets/DashboardTableicon7.svg';
+import tableicon8 from '../../../Assets/DashboardTableicon8.svg';
+import tableicon9 from '../../../Assets/DashboardTableicon9.svg';
+import tableicon10 from '../../../Assets/DashboardTableicon10.png';
 
 const DashboardTable = () => {
   const { theme } = useTheme();
-  
-  // Use a fallback theme if the current theme is undefined
+  const { t } = useTranslation();
   const currentTheme = theme || "light";
   
   const chainData = [
     { 
       id: "binance", 
       name: "Binance",
-      logo: "/assets/chain-logos/binance.svg", 
+      logo: tableicon1, 
       projects: "23.9K", 
       participants: "2.8M", 
       liquidityRaised: "$1.2B", 
@@ -20,7 +30,7 @@ const DashboardTable = () => {
     { 
       id: "ethereum", 
       name: "Ethereum",
-      logo: "/assets/chain-logos/ethereum.svg", 
+      logo: tableicon2, 
       projects: "3.1K", 
       participants: "163.7K", 
       liquidityRaised: "$123.6M", 
@@ -29,7 +39,7 @@ const DashboardTable = () => {
     { 
       id: "polkadot", 
       name: "Polkadot",
-      logo: "/assets/chain-logos/polkadot.svg", 
+      logo: tableicon3, 
       projects: "3.1K", 
       participants: "505.6K", 
       liquidityRaised: "$102M", 
@@ -38,7 +48,7 @@ const DashboardTable = () => {
     { 
       id: "cosmos", 
       name: "Cosmos",
-      logo: "/assets/chain-logos/cosmos.svg", 
+      logo: tableicon4, 
       projects: "-", 
       participants: "-", 
       liquidityRaised: "-", 
@@ -47,7 +57,7 @@ const DashboardTable = () => {
     { 
       id: "avalanche", 
       name: "Avalanche",
-      logo: "/assets/chain-logos/avalanche.svg", 
+      logo: tableicon5, 
       projects: "284", 
       participants: "18.3K", 
       liquidityRaised: "$8.8M", 
@@ -56,7 +66,7 @@ const DashboardTable = () => {
     { 
       id: "polygon", 
       name: "Polygon",
-      logo: "/assets/chain-logos/polygon.svg", 
+      logo: tableicon6, 
       projects: "618", 
       participants: "5.3K", 
       liquidityRaised: "$590.9K", 
@@ -65,7 +75,7 @@ const DashboardTable = () => {
     { 
       id: "avalanche-alt", 
       name: "Avalanche",
-      logo: "/assets/chain-logos/avalanche-alt.svg", 
+      logo: tableicon7, 
       projects: "133", 
       participants: "7.9K", 
       liquidityRaised: "$1.3M", 
@@ -74,7 +84,7 @@ const DashboardTable = () => {
     { 
       id: "sui", 
       name: "Sui",
-      logo: "/assets/chain-logos/sui.svg", 
+      logo: tableicon8, 
       projects: "42", 
       participants: "535", 
       liquidityRaised: "$51.7K", 
@@ -83,7 +93,7 @@ const DashboardTable = () => {
     { 
       id: "arbitrum", 
       name: "Arbitrum",
-      logo: "/assets/chain-logos/arbitrum.svg", 
+      logo: tableicon9, 
       projects: "73", 
       participants: "1.9K", 
       liquidityRaised: "$81.5K", 
@@ -92,7 +102,7 @@ const DashboardTable = () => {
     { 
       id: "optimism", 
       name: "Optimism",
-      logo: "/assets/chain-logos/optimism.svg", 
+      logo: tableicon10, 
       projects: "4", 
       participants: "5", 
       liquidityRaised: "$0", 
@@ -145,10 +155,10 @@ const DashboardTable = () => {
     <div className={`w-full py-6 px-4 md:px-6 ${themeClasses.container} DashboardTable`}>
       <div className={`max-w-7xl mx-auto`}>
         <h1 className={`text-2xl font-bold mb-2 ${themeClasses.title} DashboardTable`}>
-          Supported Chains
+          {t('dashboardTable.title')}
         </h1>
         <p className={`mb-6 ${themeClasses.subtitle} DashboardTable`}>
-          View statistics for all supported blockchain networks
+          {t('dashboardTable.subtitle')}
         </p>
         
         <div className={`overflow-x-auto rounded-xl border ${themeClasses.card} DashboardTable`}>
@@ -156,19 +166,19 @@ const DashboardTable = () => {
             <thead>
               <tr className={`${themeClasses.headerRow} DashboardTable`}>
                 <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider DashboardTable">
-                  Chain
+                  {t('dashboardTable.headers.chain')}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider DashboardTable">
-                  Projects
+                  {t('dashboardTable.headers.projects')}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider DashboardTable">
-                  Participants
+                  {t('dashboardTable.headers.participants')}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider DashboardTable">
-                  Liquidity raised
+                  {t('dashboardTable.headers.liquidityRaised')}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider DashboardTable">
-                  Values Locked
+                  {t('dashboardTable.headers.valuesLocked')}
                 </th>
               </tr>
             </thead>

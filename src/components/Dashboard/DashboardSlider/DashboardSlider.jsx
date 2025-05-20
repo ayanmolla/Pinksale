@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTheme } from "next-themes";
 import boximg1 from '../../../Assets/DashboardSliderboximg1.png';
 import boximg2 from '../../../Assets/DashboardSliderboximg2.jpeg';
 import boximg3 from '../../../Assets/DashboardSliderboximg3.png';
@@ -22,8 +23,8 @@ import boxicon9 from '../../../Assets/DashboardSlidericon9.svg';
 import boxicon10 from '../../../Assets/DashboardSlidericon10.png';
 
 const DashboardSlider = () => {
-  const [theme, setTheme] = useState("light");
-  const currentTheme = theme;
+  const { theme } = useTheme();
+  const currentTheme = theme || "light";
   const carouselRef = useRef(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
@@ -78,16 +79,17 @@ const DashboardSlider = () => {
   };
 
   return (
-    <div className={`max-w-7xl mx-auto mt-4 relative DashboardSlider-container DashboardHero ${
-      currentTheme === "light" ? "color-scheme" : "color-scheme"
-    }`}>
+    <div className={`max-w-7xl mx-auto mt-4 relative DashboardSlider-container DashboardHero`}>
       {/* Navigation buttons */}
       {showLeftButton && (
         <button 
           onClick={() => scroll('left')} 
-          className={`absolute left-2 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center ${
-            currentTheme === "light" ? "bg-white text-gray-800 shadow-md hover:bg-gray-100"
-                                    : "bg-gray-800 text-white shadow-gray-900 hover:bg-gray-700"
+          className={`absolute left-2 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center shadow-md transition-colors ${
+            currentTheme === "light" 
+              ? "bg-white text-gray-800 hover:bg-gray-100"
+              : currentTheme === "dark"
+                ? "bg-gray-800 text-white shadow-gray-900 hover:bg-gray-700"
+                : "bg-gray-700 text-gray-200 shadow-gray-800 hover:bg-gray-600"
           }`}
         >
           <ChevronLeft size={18} />
@@ -97,9 +99,12 @@ const DashboardSlider = () => {
       {showRightButton && (
         <button 
           onClick={() => scroll('right')} 
-          className={`absolute right-2 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center ${
-            currentTheme === "light" ? "bg-white text-gray-800 shadow-md hover:bg-gray-100" 
-                                    : "bg-gray-800 text-white shadow-gray-900 hover:bg-gray-700"
+          className={`absolute right-2 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center shadow-md transition-colors ${
+            currentTheme === "light" 
+              ? "bg-white text-gray-800 hover:bg-gray-100" 
+              : currentTheme === "dark"
+                ? "bg-gray-800 text-white shadow-gray-900 hover:bg-gray-700"
+                : "bg-gray-700 text-gray-200 shadow-gray-800 hover:bg-gray-600"
           }`}
         >
           <ChevronRight size={18} />
@@ -115,8 +120,12 @@ const DashboardSlider = () => {
         {tokens.map(token => (
           <div 
             key={token.id} 
-            className={`flex-shrink-0 w-32 py-5 bg-white cursor-pointer relative transition-transform duration-300 hover:-translate-y-1 border-r border-gray-100 DashboardSlider-item DashboardHero ${
-              currentTheme === "light" ? "text-gray-900" : "text-gray-200"
+            className={`flex-shrink-0 w-32 py-5 cursor-pointer relative transition-transform duration-300 hover:-translate-y-1 border-r DashboardSlider-item DashboardHero ${
+              currentTheme === "light" 
+                ? "bg-white text-gray-900 border-gray-100"
+                : currentTheme === "dark"
+                  ? "bg-gray-800 text-gray-200 border-gray-700"
+                  : "bg-gray-700 text-gray-200 border-gray-600"
             }`}
           >
             {/* Token ribbon */}
@@ -150,7 +159,13 @@ const DashboardSlider = () => {
             
             <div className="text-center">
               <h3 className="font-medium text-xs mb-0.5">{token.name}</h3>
-              <p className={`text-xs ${currentTheme === "light" ? "text-gray-500" : "text-gray-400"}`}>
+              <p className={`text-xs ${
+                currentTheme === "light" 
+                  ? "text-gray-500" 
+                  : currentTheme === "dark"
+                    ? "text-gray-400"
+                    : "text-gray-300"
+              }`}>
                 {token.symbol}
               </p>
             </div>

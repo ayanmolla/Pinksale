@@ -12,7 +12,7 @@ const Footer = () => {
   const currentTheme = theme || "light";
 
   return (
-    <footer className={`w-full py-8 px-4 md:px-8 lg:px-12 border-t ${
+    <footer className={`w-full py-8 px-4 md:px-8 lg:px-12 border-t mt-10 ${
       currentTheme === "light" 
         ? "bg-white border-gray-200 text-gray-800" 
         : currentTheme === "dark"

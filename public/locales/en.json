@@ -220,6 +220,94 @@
     "sampleCsv": "Sample CSV file",
     "excludeNotice": "Please exclude ❌ from fees, rewards, max tx amount to start sending tokens."
   
-}
+},
+
+    "createTeleAirdrop": {
+    "title": "Create Tele Airdrop Bot",
+    "description": {
+      "main": "Tele Airdrop Bot lets you create a Telegram Mini App for airdrop campaigns in just a few seconds, making it easy to manage and distribute rewards efficiently. Users can personalize themes, set up referral systems, and manage tasks easily for a seamless airdrop experience.",
+      "connection": "This app will connect to your Telegram bot, so you'll need to provide your bot's username and token to manage the app in PinkSale."
+    },
+    "walletSelection": "Select a wallet provider bellow",
+    "wallets": {
+      "evm": "Connect with EVM wallet",
+      "solana": "Connect with Solana wallet",
+      "ton": "Connect with TON wallet"
+    },
+    "buttons": {
+      "create": "Create Airdrop Bot",
+      "cancel": "Cancel"
+    }
+  },
+
+    "airdropBots": {
+    "title": "Tele Airdrop Bot",
+    "tabs": {
+      "all": "All",
+      "yourProjects": "Your Projects"
+    },
+    "searchPlaceholder": "Enter bot username to find your project",
+    "stats": {
+      "users": "Users",
+      "premiumUsers": "Premium Users"
+    },
+    "emptyState": {
+      "title": "No bots found",
+      "description": "Try adjusting your search terms or browse all available bots."
+    },
+    "bots": {
+      "swappay": {
+        "description": "No description"
+      },
+      "memeads": {
+        "description": "MADS is the native asset of the Meme Ads ecosystem — a groundbreaking Web3 advertising platform built on blockchain technology."
+      },
+      "moonbark": {
+        "description": "Blast off with AstroBark in the $MOONBARK Airdrop, powered by the innovative TON blockchain technology."
+      },
+      "puffy": {
+        "description": "This is PUFFY he liked to eat every Dip. PUFFY is for the chart and help PUFFY find his bottle. When PUFFY appears on the chart, it means the Dip is coming."
+      },
+      "multiday": {
+        "description": "MDT (MultiDay Token) powers MultiCard's financial ecosystem, enabling seamless transactions and rewards within the platform."
+      },
+      "may": {
+        "description": "MAY Coin is the official digital currency of the MAY AI ecosystem. Experience the future of AI-powered finance with MAY Coin."
+      },
+      "snake": {
+        "description": "Snake AI is an experimental AI-based meme coin operating on the Solana blockchain, designed to combine artificial intelligence with community-driven cryptocurrency innovation."
+      },
+      "pago": {
+        "description": "No description"
+      },
+      "tronis": {
+        "description": "💎 Onis Coin (ONIS) Airdrop – 210 Million ONIS Giveaway! 💎 We're distributing 210 million ONIS tokens for FREE to our amazing community!"
+      },
+      "soma": {
+        "description": "🟢 SOMA redefines the link between innovation and solidarity, pioneering a new era of decentralized finance that empowers communities worldwide."
+      },
+      "cheer": {
+        "description": "No description"
+      },
+      "limitbreak": {
+        "description": "No description"
+      },
+      "chainscard": {
+        "description": "Join the 21-Day Chains Card Token Airdrop Challenge! Complete daily tasks, earn rewards, and be part of the blockchain revolution."
+      },
+      "rpall": {
+        "description": "No description"
+      },
+      "aichx": {
+        "description": "No description"
+      }
+    },
+    "walletSelection": {
+      "title": "Select a wallet provider below",
+      "evm": "Connect with EVM wallet",
+      "solana": "Connect with Solana wallet",
+      "ton": "Connect with TON wallet"
+    }
+  }
 
 }

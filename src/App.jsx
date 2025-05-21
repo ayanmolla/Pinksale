@@ -35,28 +35,25 @@ function App() {
           <Route path="/launchpads/XOverFlowPresale" element={<XOverFlowPresale />} />
           <Route path="/launchpads/XOverflowFairlaunch" element={<XOverflowFairlaunch />} />
 
-          {/* Tale Airdrop */}
-          <Route path="/teleAirdrop/CreateTeleAirdrop" element={<CreateTeleAirdrop />} />
-          <Route path="/teleAirdrop/AirdropBotList" element={<AirdropBotList />} />
+          {/* Tale Airdrop Pages */}
+          <Route path="/teleairdrop/CreateTeleAirdrop" element={<CreateTeleAirdrop />} />
+          <Route path="/teleairdrop/AirdropBotList" element={<AirdropBotList />} />
 
-          {/* Pink Lock */}
+          {/* Pink Lock Pages*/}
           <Route path="/pinklock/create" element={<PinkLockCreateMain />} />
           <Route path="/pinklock/token" element={<PinkLockTokenMain />} />
 
           {/* Airdrops Pages */}
-          
-          <Route path="/Airdrops/CreateAirdrop" element={<CreateAirdrop />} />
+          <Route path="/airdrops/CreateAirdrop" element={<CreateAirdrop />} />
+          {/* <Route path="/airdrops/AirdropList" element={<AirdropList />} /> */}
 
-                    {/* BuyCryptoFiat */}
-
+          {/* Buy Crypto Page */}
           <Route path="/BuyCryptoFiat/BuyCryptoFiat" element={<BuyCryptoFiat />} />
 
-          {/* AntiBot */}
-
+          {/* Anti Bot Page */}
           <Route path="/AntiBot/AntiBot" element={<AntiBot />} />
 
-          {/* MultiCenter */}
-
+          {/* Multi Senter Page */}
           <Route path="/MultiCenter/MultiCenter" element={<MultiCenter />} />
         </Route>
       </Routes>

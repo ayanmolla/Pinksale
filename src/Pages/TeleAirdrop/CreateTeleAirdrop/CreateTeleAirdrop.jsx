@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import CreateTeleAirdropHero from "../../../components/TeleAirdrop/CreateTeleAirdropHero/CreateTeleAirdropHero";
+import Footer from "../../../components/Layout/Footer";
 
 const CreateTeleAirdrop = () => {
   return (
     <>
-      CreateTeleAirdrop
+      <CreateTeleAirdropHero/>
+      <Footer/>
     </>
-  )
-}
+  );
+};
 
 export default CreateTeleAirdrop;

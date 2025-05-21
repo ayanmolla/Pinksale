@@ -1,9 +1,12 @@
 import React from 'react';
+import AirdropBotListHero from '../../../components/TeleAirdrop/AirdropBotListHero/AirdropBotListHero';
+import Footer from "../../../components/Layout/Footer";
 
 const AirdropBotList = () => {
   return (
     <>
-      AirdropBotList
+      <AirdropBotListHero/>
+      <Footer/>
     </>
   )
 }

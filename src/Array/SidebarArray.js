@@ -45,8 +45,8 @@ const SidebarArray = (t) => [
     icon: BsCloudDrizzle, 
     hasChildren: true, 
     children: [
-      { id: "create-tele-airdrop", label: t("Create Tele Airdrop"), link: "/teleAirdrop/CreateTeleAirdrop",},
-      { id: "airdrop-bot-list", label: t("Airdrop Bot List"), link: "/teleAirdrop/AirdropBotList" }
+      { id: "create-tele-airdrop", label: t("Create Tele Airdrop"), link: "/teleairdrop/CreateTeleAirdrop",},
+      { id: "airdrop-bot-list", label: t("Airdrop Bot List"), link: "/teleairdrop/AirdropBotList" }
     ]
   },
   { 

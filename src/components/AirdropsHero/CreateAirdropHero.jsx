@@ -53,7 +53,7 @@ const CreateAirdropHero = () => {
                 currentTheme === "light" 
                   ? "border-gray-300 bg-white text-gray-800 placeholder-gray-400" 
                   : "border-gray-600 bg-gray-700 text-gray-100 placeholder-gray-400"
-              } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+              } focus:outline-none focus:ring-2 focus:ring-pink-500`}
             />
           </div>
 

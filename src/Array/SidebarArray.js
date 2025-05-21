@@ -45,8 +45,8 @@ const SidebarArray = (t) => [
     icon: BsCloudDrizzle, 
     hasChildren: true, 
     children: [
-      { id: "create-tele-airdrop", label: t("Create Tele Airdrop"), link: "/teleairdrop/create",},
-      { id: "airdrop-bot-list", label: t("Airdrop Bot List"), link: "/teleairdrop/list" }
+      { id: "create-tele-airdrop", label: t("Create Tele Airdrop"), link: "/teleAirdrop/CreateTeleAirdrop",},
+      { id: "airdrop-bot-list", label: t("Airdrop Bot List"), link: "/teleAirdrop/AirdropBotList" }
     ]
   },
   { 
@@ -68,7 +68,7 @@ const SidebarArray = (t) => [
     icon: PiParachute, 
     hasChildren: true, 
     children: [
-      { id: "create-airdrop", label: t("Create Airdrop"), link: "/Airdrops/CreateAirdrop" },
+      { id: "create-airdrop", label: t("Create Airdrop"), link: "/airdrops/CreateAirdrop" },
       { id: "airdrop-list", label: t("Airdrop List"), link: "/airdrops/list" }
     ]
   },

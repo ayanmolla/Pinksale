@@ -9,6 +9,8 @@ import CreateSubscription from "./Pages/Launchpads/CreateSubscription/CreateSubs
 import CreateSocialSale from "./Pages/Launchpads/CreateSocialSale/CreateSocialSale";
 import XOverFlowPresale from "./Pages/Launchpads/XOverFlowPresale/XOverFlowPresale";
 import XOverflowFairlaunch from "./Pages/Launchpads/𝕏OverflowFairlaunch/𝕏OverflowFairlaunch";
+import CreateTeleAirdrop from "./Pages/TeleAirdrop/CreateTeleAirdrop/CreateTeleAirdrop";
+import AirdropBotList from "./Pages/TeleAirdrop/AirdropBotList/AirdropBotList";
 import PinkLockTokenMain from "./Pages/PinkLock/PinkLockToken";
 import PinkLockCreateMain from "./Pages/PinkLock/PinkLockCreate";
 import CreateAirdrop from "./Pages/Airdrops/CreateAirdrop";
@@ -31,8 +33,8 @@ function App() {
           <Route path="/launchpads/XOverflowFairlaunch" element={<XOverflowFairlaunch />} />
 
           {/* Tale Airdrop */}
-          {/* <Route path="/teleAirdrop/CreateTeleAirdrop" element={<CreateTeleAirdrop />} /> */}
-          {/* <Route path="/teleAirdrop/AirdropBotList" element={<AirdropBotList />} /> */}
+          <Route path="/teleAirdrop/CreateTeleAirdrop" element={<CreateTeleAirdrop />} />
+          <Route path="/teleAirdrop/AirdropBotList" element={<AirdropBotList />} />
 
           {/* Pink Lock */}
           <Route path="/pinklock/create" element={<PinkLockCreateMain />} />

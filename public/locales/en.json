@@ -83,6 +83,7 @@
     "alvey": "Alvey",
     "bitrock": "Bitrock",
     "core": "Core",
+    "You need to connect wallet first.": "You need to connect wallet first.",
     "dogechain": "Dogechain",
     "pulsechain": "PulseChain",
     "base": "Base",
@@ -171,6 +172,54 @@
     "tokenAddress": "Token Address",
     "tokenAddressPlaceholder": "Ex: PinkMoon",
     "next": "Next"
-  }
+  },
+  
+  "buyCryptoFiat": {
+    "title": "Buy Crypto with Fiat",
+    "description": "Connect your wallet to begin purchasing cryptocurrency using your local currency. Fast, secure, and easy transactions with multiple payment options.",
+    "connectWallet": "Connect Wallet"
+  
+},
+
+  "antiBot": {
+    "title": "Pink Anti-Bot",
+    "tokenAddress": "Token Address",
+    "enterTokenAddress": "Enter token address",
+    "or": "Or",
+    "createToken": "Create Token",
+    "errorMessage": "Token address cannot be blank",
+    "chooseToken": "Choose a token to integrate with Pink Anti-Bot",
+    "checkGuide": "Check out the guide how to integrate Pink Anti-Bot for custom contract here",
+    "guideLink": "https://github.com/pinkmoonfinance/pink-antibot-guide"
+  
+},
+
+  "common": {
+    "optional": "optional",
+    "next": "Next",
+    "back": "Back",
+    "confirm": "Confirm"
+  },
+  "multiSender": {
+    "title": "Multi-Sender",
+    "step1": {
+      "title": "Add Your Allocation",
+      "description": "Enter your token to be send with allocations"
+    },
+    "step2": {
+      "title": "Confirmation",
+      "description": "Let review your information"
+    },
+    "tokenAddress": "Token Address",
+    "tokenAddressPlaceholder": "Ex: 0x...",
+    "tokenAddressHint": "Pink Multi-sender allows you to send ERC20 token in batch by easiest way. You can enter token address to send specific token or leave it blank to send chain token such as BNB...",
+    "allocations": "Allocations",
+    "allocationsPlaceholder": "Insert allocation: separate with breaks line. By format: address,amount or address amount\nEx:\n0x00000000000000000000000000000000001000 13.45\n0x00000000000000000000000000000000001000 1.049\n0x00000000000000000000000000000000001000 1",
+    "allocationsRequired": "Recipients allocation is required",
+    "chooseCsv": "Or choose from CSV file",
+    "sampleCsv": "Sample CSV file",
+    "excludeNotice": "Please exclude ❌ from fees, rewards, max tx amount to start sending tokens."
+  
+}
 
 }

@@ -1,12 +1,11 @@
 import React from 'react';
-import CreateTokenComponents from '../../components/Token/CreateToken';
-
+import CreateTokenHero from '../../components/Token/CreateTokenHero';
 
 const CreateToken = () => {
   return (
     <>
 
-    <CreateTokenComponents/>
+    <CreateTokenHero/>
       
     </>
   )

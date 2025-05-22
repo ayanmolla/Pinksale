@@ -1,27 +1,26 @@
 import React, { useState } from "react";
 import { useTheme } from "next-themes";
 import { useTranslation } from "react-i18next";
-import { CheckCircle } from "lucide-react";
-// import CreatePresaleImg1 from '../../../Assets/CreatePresaleImg1.svg';
-// import CreatePresaleImg2 from '../../../Assets/CreatePresaleImg2.svg';
-// import CreatePresaleImg3 from '../../../Assets/CreatePresaleImg3.svg';
-// import CreatePresaleImg4 from "../../../Assets/CreatePresaleImg4.png";
-// import CreatePresaleImg5 from '../../../Assets/CreatePresaleImg5.svg';
-// import CreatePresaleImg6 from '../../../Assets/CreatePresaleImg6.svg';
-// import CreatePresaleImg7 from '../../../Assets/CreatePresaleImg7.svg';
-// import CreatePresaleImg8 from '../../../Assets/CreatePresaleImg8.png';
-// import CreatePresaleImg9 from '../../../Assets/CreatePresaleImg9.png';
-// import CreatePresaleImg10 from '../../../Assets/CreatePresaleImg10.png';
-// import CreatePresaleImg11 from '../../../Assets/CreatePresaleImg11.png';
-// import CreatePresaleImg from '../../../Assets/CreatePresaleImg.png';
-// import CreatePresaleImg13 from '../../../Assets/CreatePresaleImg13.png';
-// import CreatePresaleImg14 from '../../../Assets/CreatePresaleImg14.svg';
-// import SolanaImg from '../../../Assets/CreatePresaleImg15.png';
-// import EclipseImg from '../../../Assets/CreatePresaleImg16.png';
-// import TonImg from '../../../Assets/CreatePresaleImg17.svg';
-// import SuiImg from '../../../Assets/CreatePresaleImg18.svg';
+import CreatePresaleImg1 from '../../Assets/CreatePresaleImg1.svg';
+import CreatePresaleImg2 from '../../Assets/CreatePresaleImg2.svg';
+import CreatePresaleImg3 from '../../Assets/CreatePresaleImg3.svg';
+import CreatePresaleImg4 from '../../Assets/CreatePresaleImg4.png';
+import CreatePresaleImg5 from '../../Assets/CreatePresaleImg5.svg';
+import CreatePresaleImg6 from '../../Assets/CreatePresaleImg6.svg';
+import CreatePresaleImg7 from '../../Assets/CreatePresaleImg7.svg';
+import CreatePresaleImg8 from '../../Assets/CreatePresaleImg8.png';
+import CreatePresaleImg9 from '../../Assets/CreatePresaleImg9.png';
+import CreatePresaleImg10 from '../../Assets/CreatePresaleImg10.png';
+import CreatePresaleImg11 from '../../Assets/CreatePresaleImg11.png';
+import CreatePresaleImg from '../../Assets/CreatePresaleImg.png';
+import CreatePresaleImg13 from '../../Assets/CreatePresaleImg13.png';
+import CreatePresaleImg14 from '../../Assets/CreatePresaleImg14.svg';
+import SolanaImg from '../../Assets/CreatePresaleImg15.png';
+import EclipseImg from '../../Assets/CreatePresaleImg16.png';
+import TonImg from '../../Assets/CreatePresaleImg17.svg';
+import SuiImg from '../../Assets/CreatePresaleImg18.svg';
 
-const CreateTokenComponents = () => {
+const CreateTokenHero = () => {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const [selectedChainGroup, setSelectedChainGroup] = useState("evm");
@@ -196,4 +195,4 @@ const CreateTokenComponents = () => {
   );
 };
 
-export default CreateTokenComponents;
+export default CreateTokenHero;

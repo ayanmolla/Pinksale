@@ -1,6 +1,36 @@
 import React, { useState } from "react";
 import { useTheme } from "next-themes";
 import { useTranslation } from "react-i18next";
+import boximg1 from '../../../Assets/AirdropBotListHeroimg1.png';
+import boximg2 from '../../../Assets/AirdropBotListHeroimg2.png';
+import boximg3 from '../../../Assets/AirdropBotListHeroimg3.png';
+import boximg4 from '../../../Assets/AirdropBotListHeroimg4.png';
+import boximg5 from '../../../Assets/AirdropBotListHeroimg5.png';
+import boximg6 from '../../../Assets/AirdropBotListHeroimg6.jpeg';
+import boximg7 from '../../../Assets/AirdropBotListHeroimg7.png';
+import boximg8 from '../../../Assets/AirdropBotListHeroimg8.jpg';
+import boximg9 from '../../../Assets/AirdropBotListHeroimg9.png';
+import boximg10 from '../../../Assets/AirdropBotListHeroimg10.jpg';
+import boximg11 from '../../../Assets/AirdropBotListHeroimg11.png';
+import boximg12 from '../../../Assets/AirdropBotListHeroimg12.png';
+import boximg13 from '../../../Assets/AirdropBotListHeroimg13.png';
+import boximg14 from '../../../Assets/AirdropBotListHeroimg14.png';
+import boximg15 from '../../../Assets/AirdropBotListHeroimg15.png';
+import boxicon1 from '../../../Assets/AirdropBotListHeroicon1.png';
+import boxicon2 from '../../../Assets/AirdropBotListHeroicon2.png';
+import boxicon3 from '../../../Assets/AirdropBotListHeroicon3.png';
+import boxicon4 from '../../../Assets/AirdropBotListHeroicon4.png';
+import boxicon5 from '../../../Assets/AirdropBotListHeroicon5.png';
+import boxicon6 from '../../../Assets/AirdropBotListHeroicon6.jpeg';
+import boxicon7 from '../../../Assets/AirdropBotListHeroicon7.png';
+import boxicon8 from '../../../Assets/AirdropBotListHeroicon8.png';
+import boxicon9 from '../../../Assets/AirdropBotListHeroicon9.png';
+import boxicon10 from '../../../Assets/AirdropBotListHeroicon10.jpg';
+import boxicon11 from '../../../Assets/AirdropBotListHeroicon11.png';
+import boxicon12 from '../../../Assets/AirdropBotListHeroicon12.png';
+import boxicon13 from '../../../Assets/AirdropBotListHeroicon13.jpg';
+import boxicon14 from '../../../Assets/AirdropBotListHeroicon14.png';
+import boxicon15 from '../../../Assets/AirdropBotListHeroicon15.png';
 
 const AirdropBotListHero = () => {
   const { theme } = useTheme();
@@ -14,6 +44,24 @@ const AirdropBotListHero = () => {
     { id: "yourProjects", label: t('airdropBots.tabs.yourProjects') }
   ];
 
+  const walletOptions = [
+    {
+      id: "evm",
+      name: t('airdropBots.walletSelection.evm'),
+      icon: "/api/placeholder/24/24" // Replace with actual EVM icon
+    },
+    {
+      id: "solana", 
+      name: t('airdropBots.walletSelection.solana'),
+      icon: "/api/placeholder/24/24" // Replace with actual Solana icon
+    },
+    {
+      id: "ton",
+      name: t('airdropBots.walletSelection.ton'), 
+      icon: "/api/placeholder/24/24" // Replace with actual TON icon
+    }
+  ];
+
   const airdropBots = [
     {
       id: 1,
@@ -21,7 +69,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.swappay.description'),
       users: 1,
       premiumUsers: 0,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg1,
+      image: boxicon1,
       category: "all"
     },
     {
@@ -30,7 +79,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.memeads.description'),
       users: 3,
       premiumUsers: 0,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg2,
+      image: boxicon2,
       category: "all"
     },
     {
@@ -39,7 +89,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.moonbark.description'),
       users: 1,
       premiumUsers: 0,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg3,
+      image: boxicon3,
       category: "all"
     },
     {
@@ -48,7 +99,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.puffy.description'),
       users: 7,
       premiumUsers: 4,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg4,
+      image: boxicon4,
       category: "all"
     },
     {
@@ -57,7 +109,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.multiday.description'),
       users: 14,
       premiumUsers: 4,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg5,
+      image: boxicon5,
       category: "all"
     },
     {
@@ -66,7 +119,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.may.description'),
       users: 9,
       premiumUsers: 1,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg6,
+      image: boxicon6,
       category: "all"
     },
     {
@@ -75,7 +129,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.snake.description'),
       users: 2,
       premiumUsers: 0,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg7,
+      image: boxicon7,
       category: "all"
     },
     {
@@ -84,7 +139,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.pago.description'),
       users: 3,
       premiumUsers: 0,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg8,
+      image: boxicon8,
       category: "all"
     },
     {
@@ -93,7 +149,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.tronis.description'),
       users: 18,
       premiumUsers: 3,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg9,
+      image: boxicon9,
       category: "all"
     },
     {
@@ -102,7 +159,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.soma.description'),
       users: 83,
       premiumUsers: 10,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg10,
+      image: boxicon10,
       category: "all"
     },
     {
@@ -111,7 +169,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.cheer.description'),
       users: 3,
       premiumUsers: 0,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg11,
+      image: boxicon11,
       category: "all"
     },
     {
@@ -120,7 +179,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.limitbreak.description'),
       users: 21,
       premiumUsers: 1,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg12,
+      image: boxicon12,
       category: "all"
     },
     {
@@ -129,7 +189,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.chainscard.description'),
       users: 374,
       premiumUsers: 32,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg13,
+      image: boxicon13,
       category: "all"
     },
     {
@@ -138,7 +199,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.rpall.description'),
       users: 3,
       premiumUsers: 0,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg14,
+      image: boxicon14,
       category: "all"
     },
     {
@@ -147,7 +209,8 @@ const AirdropBotListHero = () => {
       description: t('airdropBots.bots.aichx.description'),
       users: 13,
       premiumUsers: 3,
-      image: "/api/placeholder/80/80",
+      bgimg: boximg15,
+      image: boxicon15,
       category: "all"
     }
   ];
@@ -173,9 +236,15 @@ const AirdropBotListHero = () => {
         </h1>
       </div>
 
-      {/* Tab Navigation */}
+      {/* Tab Navigation - Fixed theme support */}
       <div className="mb-6">
-        <div className="flex space-x-1 rounded-lg p-1 bg-gray-200 dark:bg-gray-700 inline-flex">
+        <div className={`flex space-x-1 rounded-lg p-1 inline-flex ${
+          currentTheme === "light" 
+            ? "bg-gray-200" 
+            : currentTheme === "dark" 
+              ? "bg-gray-700" 
+              : "bg-gray-600"
+        }`}>
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -184,10 +253,14 @@ const AirdropBotListHero = () => {
                 activeTab === tab.id
                   ? currentTheme === "light"
                     ? "bg-white text-pink-600 shadow-sm"
-                    : "bg-gray-800 text-pink-400 shadow-sm"
+                    : currentTheme === "dark"
+                      ? "bg-gray-800 text-pink-400 shadow-sm"
+                      : "bg-gray-700 text-pink-300 shadow-sm"
                   : currentTheme === "light"
                     ? "text-gray-500 hover:text-gray-700"
-                    : "text-gray-400 hover:text-gray-200"
+                    : currentTheme === "dark"
+                      ? "text-gray-400 hover:text-gray-200"
+                      : "text-gray-300 hover:text-gray-100"
               }`}
             >
               {tab.label}
@@ -216,12 +289,12 @@ const AirdropBotListHero = () => {
             />
           </div>
 
-          {/* Bot Grid */}
+          {/* Bot Grid - Updated to match image design */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredBots.map((bot) => (
               <div
                 key={bot.id}
-                className={`rounded-lg border p-6 transition-all duration-200 hover:scale-[1.02] hover:shadow-lg cursor-pointer ${
+                className={`rounded-lg border transition-all duration-200 hover:scale-[1.02] hover:shadow-lg cursor-pointer overflow-hidden ${
                   currentTheme === "light"
                     ? "bg-white border-gray-200 hover:border-pink-300 hover:shadow-pink-100"
                     : currentTheme === "dark"
@@ -229,50 +302,61 @@ const AirdropBotListHero = () => {
                       : "bg-gray-700 border-gray-600 hover:border-pink-400 hover:shadow-pink-800/20"
                 }`}
               >
-                <div className="flex items-start gap-4 mb-4">
+                {/* Bot Image Header */}
+                <div className="h-32 relative">
+                  {/* Background Image */}
+                  <img
+                    src={bot.bgimg}
+                    alt={bot.name}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Bot Avatar */}
                   <img
                     src={bot.image}
                     alt={bot.name}
-                    className="w-12 h-12 rounded-lg object-cover"
+                    className="w-16 h-16 rounded-lg object-cover absolute -bottom-5 right-4 z-10 shadow"
                   />
-                  <div className="flex-1 min-w-0">
-                    <h3 className={`font-semibold text-lg mb-1 truncate ${
-                      currentTheme === "light" ? "text-gray-900" : "text-white"
-                    }`}>
-                      {bot.name}
-                    </h3>
-                    <p className={`text-sm line-clamp-2 ${
-                      currentTheme === "light" ? "text-gray-600" : "text-gray-400"
-                    }`}>
-                      {bot.description}
-                    </p>
-                  </div>
                 </div>
 
-                <div className="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-600">
-                  <div className="flex flex-col">
-                    <span className={`text-xs ${
-                      currentTheme === "light" ? "text-gray-500" : "text-gray-400"
-                    }`}>
-                      {t('airdropBots.stats.users')}
-                    </span>
-                    <span className={`font-semibold ${
-                      currentTheme === "light" ? "text-gray-900" : "text-white"
-                    }`}>
-                      {bot.users}
-                    </span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className={`text-xs ${
-                      currentTheme === "light" ? "text-gray-500" : "text-gray-400"
-                    }`}>
-                      {t('airdropBots.stats.premiumUsers')}
-                    </span>
-                    <span className={`font-semibold ${
-                      currentTheme === "light" ? "text-gray-900" : "text-white"
-                    }`}>
-                      {bot.premiumUsers}
-                    </span>
+                {/* Bot Info */}
+                <div className="p-4">
+                  <h3 className={`font-semibold text-lg mb-2 truncate ${
+                    currentTheme === "light" ? "text-gray-900" : "text-white"
+                  }`}>
+                    {bot.name}
+                  </h3>
+                  <p className={`text-sm mb-4 line-clamp-2 ${
+                    currentTheme === "light" ? "text-gray-600" : "text-gray-400"
+                  }`}>
+                    {bot.description}
+                  </p>
+
+                  {/* Stats */}
+                  <div className="flex justify-between items-center pt-4 border-t border-opacity-20 border-gray-300 dark:border-gray-600">
+                    <div className="flex flex-col">
+                      <span className={`text-xs mb-1 ${
+                        currentTheme === "light" ? "text-gray-500" : "text-gray-400"
+                      }`}>
+                        {t('airdropBots.stats.users')}
+                      </span>
+                      <span className={`font-semibold ${
+                        currentTheme === "light" ? "text-gray-900" : "text-white"
+                      }`}>
+                        {bot.users}
+                      </span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className={`text-xs mb-1 ${
+                        currentTheme === "light" ? "text-gray-500" : "text-gray-400"
+                      }`}>
+                        {t('airdropBots.stats.premiumUsers')}
+                      </span>
+                      <span className={`font-semibold ${
+                        currentTheme === "light" ? "text-gray-900" : "text-white"
+                      }`}>
+                        {bot.premiumUsers}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -301,13 +385,13 @@ const AirdropBotListHero = () => {
           )}
         </>
       ) : (
-        /* Your Projects Tab - Wallet Selection */
+        /* Your Projects Tab - Updated to match CreateTeleAirdropHero style */
         <div className="max-w-2xl">
           {/* Search for Your Projects */}
           <div className="mb-8">
             <input
               type="text"
-              placeholder={t('airdropBots.yourProjects.searchPlaceholder')}
+              placeholder={t('airdropBots.searchPlaceholder')}
               className={`w-full px-4 py-2 rounded-lg border transition-colors ${
                 currentTheme === "light"
                   ? "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-pink-500 focus:ring-pink-200"
@@ -318,62 +402,36 @@ const AirdropBotListHero = () => {
             />
           </div>
 
-          {/* Wallet Selection */}
+          {/* Wallet Selection - Updated to match CreateTeleAirdropHero */}
           <div className="mb-8">
-            <h2 className={`text-lg font-medium mb-6 ${
+            <h2 className={`text-xl font-semibold mb-6 ${
               currentTheme === "light" ? "text-gray-900" : "text-white"
             }`}>
               {t('airdropBots.walletSelection.title')}
             </h2>
             
-            <div className="space-y-3">
-              <button className={`w-full p-4 rounded-lg border text-left transition-all duration-200 hover:scale-[1.01] ${
-                currentTheme === "light"
-                  ? "bg-white border-gray-200 hover:border-gray-300 hover:bg-gray-50"
-                  : currentTheme === "dark"
-                    ? "bg-gray-800 border-gray-700 hover:border-gray-600 hover:bg-gray-750"
-                    : "bg-gray-700 border-gray-600 hover:border-gray-500 hover:bg-gray-650"
-              }`}>
-                <span className={`font-medium ${
-                  currentTheme === "light" ? "text-gray-900" : "text-white"
-                }`}>
-                  {t('airdropBots.walletSelection.evm')}
-                </span>
-              </button>
-
-              <button className={`w-full p-4 rounded-lg border text-left transition-all duration-200 hover:scale-[1.01] flex items-center gap-3 ${
-                currentTheme === "light"
-                  ? "bg-white border-gray-200 hover:border-gray-300 hover:bg-gray-50"
-                  : currentTheme === "dark"
-                    ? "bg-gray-800 border-gray-700 hover:border-gray-600 hover:bg-gray-750"
-                    : "bg-gray-700 border-gray-600 hover:border-gray-500 hover:bg-gray-650"
-              }`}>
-                <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-white"></div>
-                </div>
-                <span className={`font-medium ${
-                  currentTheme === "light" ? "text-gray-900" : "text-white"
-                }`}>
-                  {t('airdropBots.walletSelection.solana')}
-                </span>
-              </button>
-
-              <button className={`w-full p-4 rounded-lg border text-left transition-all duration-200 hover:scale-[1.01] flex items-center gap-3 ${
-                currentTheme === "light"
-                  ? "bg-white border-gray-200 hover:border-gray-300 hover:bg-gray-50"
-                  : currentTheme === "dark"
-                    ? "bg-gray-800 border-gray-700 hover:border-gray-600 hover:bg-gray-750"
-                    : "bg-gray-700 border-gray-600 hover:border-gray-500 hover:bg-gray-650"
-              }`}>
-                <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-white"></div>
-                </div>
-                <span className={`font-medium ${
-                  currentTheme === "light" ? "text-gray-900" : "text-white"
-                }`}>
-                  {t('airdropBots.walletSelection.ton')}
-                </span>
-              </button>
+            <div className="space-y-4">
+              {walletOptions.map((wallet) => (
+                <button
+                  key={wallet.id}
+                  className={`w-full p-4 rounded-lg border-2 text-left transition-all duration-200 hover:scale-[1.02] hover:shadow-lg ${
+                    currentTheme === "light"
+                      ? "bg-white border-gray-200 hover:border-pink-300 hover:bg-pink-50"
+                      : currentTheme === "dark"
+                        ? "bg-gray-800 border-gray-700 hover:border-pink-500 hover:bg-pink-900/20"
+                        : "bg-gray-700 border-gray-600 hover:border-pink-400 hover:bg-pink-800/20"
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <img src={wallet.icon} alt="" className="w-6 h-6" />
+                    <span className={`font-medium ${
+                      currentTheme === "light" ? "text-gray-900" : "text-white"
+                    }`}>
+                      {wallet.name}
+                    </span>
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
         </div>

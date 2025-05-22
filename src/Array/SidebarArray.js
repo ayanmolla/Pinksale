@@ -79,7 +79,7 @@ const SidebarArray = (t) => [
     icon: GoPlusCircle, 
     hasChildren: true, 
     children: [
-      { id: "create-token", label: t("Create Token"), link: "/token/create" },
+      { id: "create-token", label: t("Create Token"), link: "/token/CreateToken" },
       { id: "baby-token", label: t("Baby Token"), link: "/token/baby" }
     ]
   },

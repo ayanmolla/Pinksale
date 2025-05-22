@@ -17,6 +17,7 @@ import CreateAirdrop from "./Pages/Airdrops/CreateAirdrop";
 import BuyCryptoFiat from "./Pages/BuyCryptoFiat/BuyCryptoFiat";
 import AntiBot from "./Pages/AntiBot/AntiBot";
 import MultiCenter from "./Pages/MultiCenter/MultiCenter";
+import PinkLockLiquidityMain from "./Pages/PinkLock/PinkLockLiquidity";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           {/* Pink Lock Pages*/}
           <Route path="/pinklock/create" element={<PinkLockCreateMain />} />
           <Route path="/pinklock/token" element={<PinkLockTokenMain />} />
+          <Route path="/pinklock/liquidity" element={<PinkLockLiquidityMain />} />
 
           {/* Airdrops Pages */}
           <Route path="/airdrops/CreateAirdrop" element={<CreateAirdrop />} />

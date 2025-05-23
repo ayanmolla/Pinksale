@@ -17,6 +17,7 @@ import CreateAirdrop from "./Pages/Airdrops/CreateAirdrop";
 import BuyCryptoFiat from "./Pages/BuyCryptoFiat/BuyCryptoFiat";
 import AntiBot from "./Pages/AntiBot/AntiBot";
 import MultiCenter from "./Pages/MultiCenter/MultiCenter";
+import LeaderBoard from "./Pages/LeaderBoard/LeaderBoard";
 
 function App() {
   return (
@@ -55,6 +56,8 @@ function App() {
 
           {/* Multi Senter Page */}
           <Route path="/MultiCenter/MultiCenter" element={<MultiCenter />} />
+          {/* Leader Board */}
+          <Route path="/LeaderBoard/LeaderBoard" element={<LeaderBoard />} />
         </Route>
       </Routes>
     </BrowserRouter>

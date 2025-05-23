@@ -308,6 +308,30 @@
       "solana": "Connect with Solana wallet",
       "ton": "Connect with TON wallet"
     }
-  }
+  },
+  
+  "leaderboard": {
+    "title": "Leaderboard",
+    "totalSuccessThisWeek": "Total Success This Week",
+    "totalRaisedThisWeek": "Total Raised This Week",
+    "week21": "Week 21/2025",
+    "week20": "Week 20/2025",
+    "week19": "Week 19/2025",
+    "week18": "Week 18/2025",
+    "week17": "Week 17/2025",
+    "week16": "Week 16/2025",
+    "week15": "Week 15/2025",
+    "chains": "Chains",
+    "sortBy": "Sort by",
+    "sortByAmount": "Sort by Amount",
+    "sortByDate": "Sort by Date",
+    "view": "View",
+    "rank": "Rank",
+    "name": "Name",
+    "amount": "Amount",
+    "date": "Date",
+    "progress": "Progress"
+  
+}
 
 }

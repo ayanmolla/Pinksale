@@ -84,7 +84,7 @@ const SidebarArray = (t) => [
     ]
   },
   { id: "support", label: t("support"), link: "/support", icon: PiTelegramLogo, hasChildren: false, children: [] },
-  { id: "leaderboards", label: t("leaderboards"), link: "/leaderboards", icon: MdOutlineLeaderboard, hasChildren: false, children: [] },
+  { id: "leaderboards", label: t("leaderboards"), link: "/LeaderBoard/LeaderBoard", icon: MdOutlineLeaderboard, hasChildren: false, children: [] },
   { id: "buy-crypto", label: t("buy-crypto"), link: "/BuyCryptoFiat/BuyCryptoFiat", icon: HiCash, hasChildren: false, children: [] },
   { id: "anti-bot", label: t("anti-bot"), link: "/AntiBot/AntiBot", icon: LuBot, hasChildren: false, children: [] },
   { id: "multi-sender", label: t("multi-sender"), link: "/MultiCenter/MultiCenter", icon: PiPaperPlaneRight, hasChildren: false, children: [] },

@@ -31,6 +31,9 @@ import boxicon12 from '../../../Assets/AirdropBotListHeroicon12.png';
 import boxicon13 from '../../../Assets/AirdropBotListHeroicon13.jpg';
 import boxicon14 from '../../../Assets/AirdropBotListHeroicon14.png';
 import boxicon15 from '../../../Assets/AirdropBotListHeroicon15.png';
+import btnicon1 from '../../../Assets/AirdropBotListHerobtnicon1.png';
+import btnicon2 from '../../../Assets/AirdropBotListHerobtnicon2.png';
+import btnicon3 from '../../../Assets/AirdropBotListHerobtnicon3.svg';
 
 const AirdropBotListHero = () => {
   const { theme } = useTheme();
@@ -48,17 +51,17 @@ const AirdropBotListHero = () => {
     {
       id: "evm",
       name: t('airdropBots.walletSelection.evm'),
-      icon: "/api/placeholder/24/24" // Replace with actual EVM icon
+      icon: btnicon1
     },
     {
       id: "solana", 
       name: t('airdropBots.walletSelection.solana'),
-      icon: "/api/placeholder/24/24" // Replace with actual Solana icon
+      icon: btnicon2
     },
     {
       id: "ton",
       name: t('airdropBots.walletSelection.ton'), 
-      icon: "/api/placeholder/24/24" // Replace with actual TON icon
+      icon: btnicon3
     }
   ];
 

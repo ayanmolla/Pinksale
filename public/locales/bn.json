@@ -332,8 +332,65 @@
     "amount": "পরিমাণ",
     "date": "তারিখ",
     "progress": "অগ্রগতি"
-  
-}
+},
 
+  "launchpadlist": {
+    "title": "লঞ্চপ্যাড",
+    "tabs": {
+      "all": "সব",
+      "advancedMode": "উন্নত মোড",
+      "myContributions": "আমার অবদান"
+    },
+    "filters": {
+      "allStatus": "সব স্ট্যাটাস",
+      "upcoming": "আসন্ন",
+      "live": "লাইভ",
+      "ended": "শেষ"
+    },
+    "sort": {
+      "noSort": "কোন সাজানো নেই",
+      "name": "নাম",
+      "progress": "অগ্রগতি",
+      "time": "সময়"
+    },
+    "searchPlaceholder": "লঞ্চপ্যাড খুঁজুন...",
+    "labels": {
+      "affiliate": "অ্যাফিলিয়েট",
+      "subscribers": "সদস্য",
+      "soft": "সফট ক্যাপ",
+      "liquidity": "তরলতা",
+      "lockupTime": "লকআপ সময়"
+    },
+    "status": {
+      "live": "লাইভ",
+      "upcoming": "আসন্ন",
+      "ended": "শেষ"
+    },
+    "actions": {
+      "view": "বিস্তারিত দেখুন"
+    },
+    "table": {
+      "name": "নাম",
+      "hardCap": "হার্ড ক্যাপ",
+      "coin": "কয়েন",
+      "initialCap": "প্রাথমিক ক্যাপ",
+      "kycAudit": "KYC/অডিট",
+      "status": "স্ট্যাটাস",
+      "links": "লিঙ্ক",
+      "countdown": "কাউন্টডাউন",
+      "saleEnds": "বিক্রয় শেষ",
+      "action": "কর্ম"
+    },
+    "wallet": {
+      "message": "আপনার অবদান দেখতে ওয়ালেট সংযুক্ত করুন",
+      "subMessage": "লঞ্চপ্যাডে আপনার বিনিয়োগ এবং অংশগ্রহণ ট্র্যাক করুন",
+      "connectFirst": "আপনার অবদান দেখতে প্রথমে আপনার ওয়ালেট সংযুক্ত করুন।",
+      "connectWallet": "ওয়ালেট সংযুক্ত করুন"
+    },
+    "emptyState": {
+      "title": "কোন লঞ্চপ্যাড পাওয়া যায়নি",
+      "description": "লঞ্চপ্যাড খুঁজতে আপনার ফিল্টার বা অনুসন্ধানের শর্তাবলী সামঞ্জস্য করার চেষ্টা করুন।"
+    }
+  }
 
 }

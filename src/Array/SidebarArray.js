@@ -24,7 +24,7 @@ const SidebarArray = (t) => [
       { id: "create-social-sale", label: t("Create Social Sale"), link: "/launchpads/CreateSocialSale" },
       { id: "overflow-presale", label: t("Overflow Presale"), link: "/launchpads/XOverFlowPresale" },
       { id: "overflow-fairlaunch", label: t("Overflow Fairlaunch"), link: "/launchpads/XOverflowFairlaunch" },
-      { id: "launchpad-list", label: t("Launchpad List"), link: "/launchpads/list" }
+      { id: "launchpad-list", label: t("Launchpad List"), link: "/launchpads/LaunchpadsList" }
     ]
   },
   { 
@@ -80,7 +80,7 @@ const SidebarArray = (t) => [
     hasChildren: true, 
     children: [
       { id: "create-token", label: t("Create Token"), link: "/token/CreateToken" },
-      { id: "baby-token", label: t("Baby Token"), link: "/token/baby" }
+      { id: "baby-token", label: t("Baby Token"), link: "/token/TokenBaby" }
     ]
   },
   { id: "support", label: t("support"), link: "/support", icon: PiTelegramLogo, hasChildren: false, children: [] },

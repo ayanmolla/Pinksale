@@ -9,15 +9,18 @@ import CreateSubscription from "./Pages/Launchpads/CreateSubscription/CreateSubs
 import CreateSocialSale from "./Pages/Launchpads/CreateSocialSale/CreateSocialSale";
 import XOverFlowPresale from "./Pages/Launchpads/XOverFlowPresale/XOverFlowPresale";
 import XOverflowFairlaunch from "./Pages/Launchpads/𝕏OverflowFairlaunch/𝕏OverflowFairlaunch";
+import LaunchpadsList from "./Pages/Launchpads/LaunchpadsList/LaunchpadsList";
 import CreateTeleAirdrop from "./Pages/TeleAirdrop/CreateTeleAirdrop/CreateTeleAirdrop";
 import AirdropBotList from "./Pages/TeleAirdrop/AirdropBotList/AirdropBotList";
 import PinkLockTokenMain from "./Pages/PinkLock/PinkLockToken";
 import PinkLockCreateMain from "./Pages/PinkLock/PinkLockCreate";
 import CreateAirdrop from "./Pages/Airdrops/CreateAirdrop";
+import CreateToken from "./Pages/Token/CreateToken";
+import TokenBaby from "./Pages/Token/TokenBaby";
+import LeaderBoard from "./Pages/LeaderBoard/LeaderBoard";
 import BuyCryptoFiat from "./Pages/BuyCryptoFiat/BuyCryptoFiat";
 import AntiBot from "./Pages/AntiBot/AntiBot";
 import MultiCenter from "./Pages/MultiCenter/MultiCenter";
-import LeaderBoard from "./Pages/LeaderBoard/LeaderBoard";
 
 function App() {
   return (
@@ -35,6 +38,7 @@ function App() {
           <Route path="/launchpads/CreateSocialSale" element={<CreateSocialSale />} />
           <Route path="/launchpads/XOverFlowPresale" element={<XOverFlowPresale />} />
           <Route path="/launchpads/XOverflowFairlaunch" element={<XOverflowFairlaunch />} />
+          <Route path="/launchpads/LaunchpadsList" element={<LaunchpadsList/>} />
 
           {/* Tale Airdrop Pages */}
           <Route path="/teleairdrop/CreateTeleAirdrop" element={<CreateTeleAirdrop />} />
@@ -48,6 +52,13 @@ function App() {
           <Route path="/airdrops/CreateAirdrop" element={<CreateAirdrop />} />
           {/* <Route path="/airdrops/AirdropList" element={<AirdropList />} /> */}
 
+          {/* Token Pages */}
+          <Route path="/token/CreateToken" element={<CreateToken />} />
+          <Route path="/token/TokenBaby" element={<TokenBaby />} />
+
+          {/* Leaderboard Page*/}
+          <Route path="/LeaderBoard/LeaderBoard" element={<LeaderBoard />} />
+
           {/* Buy Crypto Page */}
           <Route path="/BuyCryptoFiat/BuyCryptoFiat" element={<BuyCryptoFiat />} />
 
@@ -56,8 +67,7 @@ function App() {
 
           {/* Multi Senter Page */}
           <Route path="/MultiCenter/MultiCenter" element={<MultiCenter />} />
-          {/* Leader Board */}
-          <Route path="/LeaderBoard/LeaderBoard" element={<LeaderBoard />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

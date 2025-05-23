@@ -330,8 +330,66 @@
     "name": "Name",
     "amount": "Amount",
     "date": "Date",
-    "progress": "Progress"
-  
-}
+    "progress": "Progress" 
+},
+
+  "launchpadlist": {
+    "title": "Launchpads",
+    "tabs": {
+      "all": "All",
+      "advancedMode": "Advanced Mode",
+      "myContributions": "My Contributions"
+    },
+    "filters": {
+      "allStatus": "All Status",
+      "upcoming": "Upcoming",
+      "live": "Live",
+      "ended": "Ended"
+    },
+    "sort": {
+      "noSort": "No Sort",
+      "name": "Name",
+      "progress": "Progress",
+      "time": "Time"
+    },
+    "searchPlaceholder": "Search launchpads...",
+    "labels": {
+      "affiliate": "Affiliate",
+      "subscribers": "Subscribers",
+      "soft": "Soft Cap",
+      "liquidity": "Liquidity",
+      "lockupTime": "Lockup Time"
+    },
+    "status": {
+      "live": "Live",
+      "upcoming": "Upcoming",
+      "ended": "Ended"
+    },
+    "actions": {
+      "view": "View Details"
+    },
+    "table": {
+      "name": "Name",
+      "hardCap": "Hard Cap",
+      "coin": "Coin",
+      "initialCap": "Initial Cap",
+      "kycAudit": "KYC/Audit",
+      "status": "Status",
+      "links": "Links",
+      "countdown": "Countdown",
+      "saleEnds": "Sale Ends",
+      "action": "Action"
+    },
+    "wallet": {
+      "message": "Connect your wallet to view your contributions",
+      "subMessage": "Track your investments and participation in launchpads",
+      "connectFirst": "Please connect your wallet first to view your contributions.",
+      "connectWallet": "Connect Wallet"
+    },
+    "emptyState": {
+      "title": "No Launchpads Found",
+      "description": "Try adjusting your filters or search terms to find launchpads."
+    }
+  }
 
 }

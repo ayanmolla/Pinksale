@@ -1,35 +1,14 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React from "react";
 import { useTheme } from "next-themes";
 import { useTranslation } from "react-i18next";
 import ToggleTheme from "./ToggleTheme";
-import { Search, Globe } from "lucide-react";
+import { Search } from "lucide-react";
 import iconimg from "../../Assets/headerdexviewicon.svg";
 
 const Header = () => {
   const { theme } = useTheme();
-  const [isLangOpen, setIsLangOpen] = useState(false);
-  const langDropdownRef = useRef(null);
-  const { i18n, t } = useTranslation();
-
+  const { t } = useTranslation();
   const currentTheme = theme || "light";
-
-  const handleLangChange = (lang) => {
-    i18n.changeLanguage(lang);
-    setIsLangOpen(false);
-  };
-
-  const handleClickOutside = useCallback((event) => {
-    if (langDropdownRef.current && !langDropdownRef.current.contains(event.target)) {
-      setIsLangOpen(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [handleClickOutside]);
 
   return (
     <div
@@ -77,70 +56,6 @@ const Header = () => {
       </div>
 
       <div className="flex items-center gap-2">
-        {/* Language Selector */}
-        <div className="relative">
-          <div
-            className={`w-10 h-10 rounded-lg border shadow-[0_4px_20px_rgba(0,0,0,0.05)] ${
-              currentTheme === "light"
-                ? "border-custom-border bg-sub-card"
-                : currentTheme === "dark"
-                ? "bg-gray-800 border border-gray-700"
-                : "bg-gray-700 border border-gray-600"
-            }`}
-          >
-            <button
-              className={`w-full h-full flex justify-center items-center ${
-                currentTheme === "light" ? "text-dispute-color" : "text-gray-200"
-              }`}
-              onClick={() => setIsLangOpen(!isLangOpen)}
-            >
-              <Globe className="w-5 h-5" />
-            </button>
-          </div>
-
-          {isLangOpen && (
-            <div
-              ref={langDropdownRef}
-              className={`absolute right-0 p-2 rounded-xl z-50 w-44 mt-2 flex flex-col gap-2 justify-start items-start shadow-lg border ${
-                currentTheme === "light"
-                  ? "bg-card border-custom-border text-dispute-color dark:shadow-[#212121]"
-                  : currentTheme === "dark"
-                  ? "bg-gray-800 border-gray-700 text-gray-200 shadow-[#212121]"
-                  : "bg-gray-700 border-gray-600 text-gray-200 shadow-[#212121]"
-              }`}
-            >
-              <button
-                onClick={() => handleLangChange("en")}
-                className={`flex gap-2 items-center text-sm w-full p-1.5 rounded-lg ${
-                  i18n.language === "en"
-                    ? "text-text-color"
-                    : currentTheme === "light"
-                    ? "hover:bg-gray-100 hover:text-dispute-color"
-                    : currentTheme === "dark"
-                    ? "hover:bg-gray-700 hover:text-white"
-                    : "hover:bg-gray-600 hover:text-white"
-                }`}
-              >
-                <Globe className="w-4 h-4" /> English {i18n.language === "en" && "✓"}
-              </button>
-              <button
-                onClick={() => handleLangChange("bn")}
-                className={`flex gap-2 items-center text-sm w-full p-1.5 rounded-lg ${
-                  i18n.language === "bn"
-                    ? "text-text-color"
-                    : currentTheme === "light"
-                    ? "hover:bg-gray-100 hover:text-dispute-color"
-                    : currentTheme === "dark"
-                    ? "hover:bg-gray-700 hover:text-white"
-                    : "hover:bg-gray-600 hover:text-white"
-                }`}
-              >
-                <Globe className="w-4 h-4" /> বাংলা (Bengali) {i18n.language === "bn" && "✓"}
-              </button>
-            </div>
-          )}
-        </div>
-
         <ToggleTheme />
 
         <a

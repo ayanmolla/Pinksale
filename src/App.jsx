@@ -14,6 +14,7 @@ import CreateTeleAirdrop from "./Pages/TeleAirdrop/CreateTeleAirdrop/CreateTeleA
 import AirdropBotList from "./Pages/TeleAirdrop/AirdropBotList/AirdropBotList";
 import PinkLockTokenMain from "./Pages/PinkLock/PinkLockToken";
 import PinkLockCreateMain from "./Pages/PinkLock/PinkLockCreate";
+import PinkLockLiquidity from "./components/PinkLock/PinkLockLiquidity/PinkLockLiquidity";
 import CreateAirdrop from "./Pages/Airdrops/CreateAirdrop";
 import CreateToken from "./Pages/Token/CreateToken";
 import TokenBaby from "./Pages/Token/TokenBaby";
@@ -47,6 +48,7 @@ function App() {
           {/* Pink Lock Pages*/}
           <Route path="/pinklock/create" element={<PinkLockCreateMain />} />
           <Route path="/pinklock/token" element={<PinkLockTokenMain />} />
+          <Route path="/pinklock/liquidity" element={<PinkLockLiquidity />} />
 
           {/* Airdrops Pages */}
           <Route path="/airdrops/CreateAirdrop" element={<CreateAirdrop />} />

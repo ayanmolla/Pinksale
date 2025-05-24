@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "next-themes";
@@ -10,8 +9,8 @@ import collapselogo from '../../Assets/Logoimg.svg';
 import { useTranslation } from "react-i18next";
 import SidebarArray from "../../Array/SidebarArray";
 
-const Sidebar = () => {
-  const [expanded, setExpanded] = useState(false);
+const Sidebar = ({ isMobile = false, onClose }) => {
+  const [expanded, setExpanded] = useState(isMobile);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const location = useLocation();
   const { theme } = useTheme();
@@ -31,22 +30,39 @@ const Sidebar = () => {
           ? "bg-white border-r border-gray-200" 
           : currentTheme === "dark"
             ? "bg-gray-900 border-r border-gray-700"
-            : "bg-gray-800 border-r border-gray-700" // For dim theme
-      }`}
-      style={{ width: "64px" }}
+            : "bg-gray-800 border-r border-gray-700"
+      } ${isMobile ? 'w-62' : 'w-16'}`}
+      onMouseEnter={() => !isMobile && setExpanded(true)}
+      onMouseLeave={() => !isMobile && setExpanded(false)}
     >
-      {/* Logo Section - Fixed width */}
-      <div className={`flex h-16 items-center justify-center w-16 ${
+      {/* Logo Section */}
+      <div className={`flex h-16 items-center ${isMobile ? 'justify-between px-4' : 'justify-center'} ${isMobile ? 'w-62' : 'w-16'} ${
         currentTheme === "light"
           ? "border-b border-gray-200"
           : "border-b border-gray-700"
       }`}>
-        <Link to="/Dashboard">
-          <img src={collapselogo} alt="DexView" className="h-10 w-10 object-contain" />
+        <Link to="/Dashboard" className="flex items-center">
+          <img src={collapselogo} alt="PinkSale" className="h-10 w-10 object-contain" />
         </Link>
+        
+        {/* Close button for mobile */}
+        {isMobile && onClose && (
+          <button
+            onClick={onClose}
+            className={`p-2 rounded-lg transition-colors ${
+              currentTheme === "light"
+                ? "text-gray-500 hover:text-gray-700 hover:bg-gray-100"
+                : "text-gray-400 hover:text-gray-200 hover:bg-gray-700"
+            }`}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        )}
       </div>
 
-      {/* Menu Items - Expandable */}
+      {/* Menu Items */}
       <div 
         className={`relative overflow-y-auto max-h-[calc(100vh-64px)] scrollbar-hide transition-all duration-300 ${
           currentTheme === "light" 
@@ -58,10 +74,8 @@ const Sidebar = () => {
         style={{ 
           scrollbarWidth: 'none', 
           msOverflowStyle: 'none',
-          width: expanded ? "240px" : "64px"
+          width: (expanded || isMobile) ? "240px" : "64px"
         }}
-        onMouseEnter={() => setExpanded(true)}
-        onMouseLeave={() => setExpanded(false)}
       >
         {/* Menu Items Content */}
         <div className={` ${
@@ -89,7 +103,7 @@ const Sidebar = () => {
                 onClick={(e) => {
                   if (item.hasChildren) {
                     e.preventDefault();
-                    if (expanded) {
+                    if (expanded || isMobile) {
                       handleSubmenuClick(item.id);
                     }
                   }
@@ -99,14 +113,14 @@ const Sidebar = () => {
                   <div className="min-w-[24px] flex items-center justify-center">
                     {item.icon && <item.icon className="w-5 h-5" />}
                   </div>
-                  {expanded && (
+                  {(expanded || isMobile) && (
                     <span className="ml-3 whitespace-nowrap">
                       {item.label}
                     </span>
                   )}
                 </div>
 
-                {expanded && item.hasChildren && (
+                {(expanded || isMobile) && item.hasChildren && (
                   <HiOutlineChevronRight 
                     className={`w-4 h-4 ml-auto transform transition-transform ${
                       activeSubmenu === item.id ? "rotate-90" : ""
@@ -116,7 +130,7 @@ const Sidebar = () => {
               </Link>
 
               {/* Submenu */}
-              {expanded && item.hasChildren && activeSubmenu === item.id && (
+              {(expanded || isMobile) && item.hasChildren && activeSubmenu === item.id && (
                 <div className={`pl-10 pr-4 py-2 ${
                   currentTheme === "light"
                     ? "bg-gray-50"

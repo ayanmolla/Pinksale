@@ -28,8 +28,12 @@ import LeaderBoardImg28 from '../../Assets/LeaderBoardImg28.png';
 import LeaderBoardImg29 from '../../Assets/LeaderBoardImg29.png';
 import LeaderBoardImg30 from '../../Assets/LeaderBoardImg30.png';
 import LeaderBoardImg31 from '../../Assets/LeaderBoardImg31.jpg';
-
 import LeaderBoardImg33 from '../../Assets/LeaderBoardImg33.jpg';
+import LeaderBoardImg34 from '../../Assets/LeaderBoardImg34.jpg';
+import LeaderBoardImg35 from '../../Assets/LeaderBoardImg35.jpg';
+import LeaderBoardImg36 from '../../Assets/LeaderBoardImg36.png';
+import LeaderBoardImg37 from '../../Assets/LeaderBoardImg37.jpg';
+import LeaderBoardImg38 from '../../Assets/LeaderBoardImg38.png';
 
 
 
@@ -91,7 +95,7 @@ const LeaderboardHero = () => {
           amount: "284.646 BNB",
           date: "2025.05.13",
           progress: 100,
-          avatar: "/api/placeholder/40/40"
+          avatar: LeaderBoardImg30
         },
         {
           id: 2,
@@ -101,7 +105,7 @@ const LeaderboardHero = () => {
           amount: "120.5512 BNB",
           date: "2025.05.12",
           progress: 100,
-          avatar: "/api/placeholder/40/40"
+          avatar: LeaderBoardImg31
         },
         {
           id: 3,
@@ -111,7 +115,7 @@ const LeaderboardHero = () => {
           amount: "35.4159 BNB",
           date: "2025.05.12",
           progress: 72,
-          avatar: "/api/placeholder/40/40"
+          avatar: LeaderBoardImg33
         },
         {
           id: 4,
@@ -121,7 +125,7 @@ const LeaderboardHero = () => {
           amount: "30 BNB",
           date: "2025.05.16",
           progress: 100,
-          avatar: "/api/placeholder/40/40"
+          avatar: LeaderBoardImg34
         },
         {
           id: 5,
@@ -131,7 +135,8 @@ const LeaderboardHero = () => {
           amount: "52.4225 SOL",
           date: "2025.05.14",
           progress: 29,
-          avatar: "/api/placeholder/40/40"
+          avatar:LeaderBoardImg35
+
         },
         {
           id: 6,
@@ -141,7 +146,7 @@ const LeaderboardHero = () => {
           amount: "40.6008 SOL",
           date: "2025.05.12",
           progress: 100,
-          avatar: "/api/placeholder/40/40"
+          avatar: LeaderBoardImg36
         },
         {
           id: 7,
@@ -151,7 +156,7 @@ const LeaderboardHero = () => {
           amount: "33.7623 SOL",
           date: "2025.05.17",
           progress: 100,
-          avatar: "/api/placeholder/40/40"
+          avatar: LeaderBoardImg37
         },
         {
           id: 8,
@@ -161,7 +166,7 @@ const LeaderboardHero = () => {
           amount: "3.4332 BNB",
           date: "2025.05.16",
           progress: 100,
-          avatar: "/api/placeholder/40/40"
+          avatar: LeaderBoardImg38
         }
       ]
     },

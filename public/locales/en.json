@@ -390,6 +390,36 @@
       "title": "No Launchpads Found",
       "description": "Try adjusting your filters or search terms to find launchpads."
     }
-  }
+  },
+  
+  "about": "About",
+  "ended": "Ended",
+  "details": "Details",
+  "status": "Status",
+  "sale_type": "Sale Type",
+  "public": "Public",
+  "unsold_token": "Unsold Token",
+  "min_buy": "Min Buy",
+  "max_buy": "Max Buy",
+  "current_raised": "Current Raised",
+  "claim_time": "Claim Time",
+  "total_contributors": "Total Contributors",
+  "pool_ended": "This pool has been ended",
+  "view_chart": "View Chart",
+  "buy_sell": "Buy/Sell",
+  "manual_listing_launchpad": "Manual Listing Launchpad",
+  "manual_listing_warning": "Manual listing can lead to complete control of funds to project owners and thereby does not always guarantee token listings. This can sometimes result into mishandling of funds. Please assess necessary risks before investing into manually listing projects.",
+  
+  "presale_1_sold_out": "Presale 1: SOLD OUT",
+  "listing_may_28": "Listing on May 28 Confirmed",
+  "unsold_presale_burn": "Unsold Presale 2 Tokens & Presale 3 Tokens = Burn",
+  "games_development": "4+ Games in Development (P2E & Non-P2E)",
+  "ip_merch": "100+ IP Merch",
+  "ranked_gaming_project": "Ranked #2 Solana Gaming Project",
+  "reveals_soon": "Reveals Soon",
+  "bingx_listed": "BingX",
+  "mexc_listed": "MEXC",
+  "bitmart_listed": "BitMart"
+
 
 }

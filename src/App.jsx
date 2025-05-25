@@ -22,6 +22,7 @@ import LeaderBoard from "./Pages/LeaderBoard/LeaderBoard";
 import BuyCryptoFiat from "./Pages/BuyCryptoFiat/BuyCryptoFiat";
 import AntiBot from "./Pages/AntiBot/AntiBot";
 import MultiCenter from "./Pages/MultiCenter/MultiCenter";
+import StoopidCat from "./Pages/StoopidCat/StoopidCat";
 
 function App() {
   return (
@@ -69,6 +70,7 @@ function App() {
 
           {/* Multi Senter Page */}
           <Route path="/MultiCenter/MultiCenter" element={<MultiCenter />} />
+          <Route path="/StoopidCat/StoopidCat" element={<StoopidCat />} />
 
         </Route>
       </Routes>

@@ -80,6 +80,7 @@ const SidebarArray = (t) => [
     hasChildren: true, 
     children: [
       { id: "create-token", label: t("Create Token"), link: "/token/CreateToken" },
+      { id: "meta-data", label: t("Meta Data"), link: "/token/MetaData" },
       { id: "baby-token", label: t("Baby Token"), link: "/token/TokenBaby" }
     ]
   },

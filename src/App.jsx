@@ -23,6 +23,7 @@ import BuyCryptoFiat from "./Pages/BuyCryptoFiat/BuyCryptoFiat";
 import AntiBot from "./Pages/AntiBot/AntiBot";
 import MultiCenter from "./Pages/MultiCenter/MultiCenter";
 import StoopidCat from "./Pages/StoopidCat/StoopidCat";
+import MetaData from "./Pages/Token/MetaData";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
 
           {/* Token Pages */}
           <Route path="/token/CreateToken" element={<CreateToken />} />
+          <Route path="/token/MetaData" element={<MetaData />} />
           <Route path="/token/TokenBaby" element={<TokenBaby />} />
 
           {/* Leaderboard Page*/}
